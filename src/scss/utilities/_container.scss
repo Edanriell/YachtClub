@@ -1,0 +1,40 @@
+@use "../abstracts/mixins" as *;
+@use "../vendors/include-media" as *;
+
+$breakpoints: (
+	phone: 320px,
+	tablet: 768px,
+	desktop: 1366px
+);
+
+.container {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+@include media(">=tablet") {
+	.container {
+		width: auto;
+		margin: 0;
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+}
+
+@include media(">=desktop") {
+	.container {
+		position: relative;
+		max-width: calc(97rem + (19.8rem * 2));
+		margin: 0 auto;
+		padding-left: 19.8rem;
+		padding-right: 19.8rem;
+	}
+
+	.container--size--big {
+		position: relative;
+		max-width: calc(117rem + (9.8rem * 2));
+		margin: 0 auto;
+		padding-left: 9.8rem;
+		padding-right: 9.8rem;
+	}
+}

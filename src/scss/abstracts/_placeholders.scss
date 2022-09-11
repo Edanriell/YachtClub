@@ -1,0 +1,13 @@
+%black-filled-circle {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 23rem;
+    height: 23rem;
+    box-shadow: 0 4px 4px var(--clr-neutral-600);
+    background-color: var(--clr-neutral-500);
+    border-radius: 50%;
+    z-index: -1;
+}
