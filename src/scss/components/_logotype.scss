@@ -1,0 +1,19 @@
+.logotype {
+    display: block;
+}
+
+.logotype--size--small {
+    width: 6.4rem;
+    height: 6.8rem;
+}
+
+.logotype--size--large {
+    width: 10rem;
+    height: 10.6rem;
+}
+
+.logotype__svg {
+    width: inherit;
+    height: inherit;
+    fill: none;
+}

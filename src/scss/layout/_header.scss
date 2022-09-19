@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as *;
+
+$header-padding-top: 2rem;
+$header-padding-bottom: 2rem;
+
+.header {
+    display: block;
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+}
+
+.header__wrapper {
+    @include flex(center, space-between, row);
+}

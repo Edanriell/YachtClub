@@ -1,0 +1,9 @@
+@use "../abstracts/mixins" as *;
+
+.navigation {
+    @include flex(center, center, row);
+}
+
+.navigation__main-navigation {
+    @include flex(center, center, row);
+}

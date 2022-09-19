@@ -3,6 +3,7 @@
 	"extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
 	"rules": {
 		"plugin/no-unsupported-browser-features": true,
-		"rule-empty-line-before": ["always", { "except": ["first-nested"], "ignore": ["after-comment"] }]
+		"rule-empty-line-before": ["always", { "except": ["first-nested"], "ignore": ["after-comment"] }],
+		"selector-class-pattern": null
 	}
 }

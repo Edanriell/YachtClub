@@ -1,17 +1,15 @@
 $colors: (
 	primary: (
-		"nileBlue": hsl(213deg, 58%, 20%), // #163152
-		"darkBlueGrey": hsl(213deg, 35%, 24%), // #283C54
+		"nileBlue": hsl(213deg 58% 20%), // #163152
+		"darkBlueGrey": hsl(213deg 35% 24%), // #283C54
 		),
 	secondary: (
-		"whiteSmoke": hsl(240deg, 11%, 96%), // #F5F5F7
+		"whiteSmoke": hsl(240deg 11% 96%), // #F5F5F7
 		),
 	accent: (
-		"darkTurquoise": hsl(177deg, 100%, 39%), // #00C6BD
+		"darkTurquoise": hsl(177deg 100% 39%), // #00C6BD
 	),
 	neutral: (
-		"paleGrey": hsl(240deg, 100%, 100%), // #FDFDFF
-	),
-	hover: (
+		"paleGrey": hsl(240deg 100% 100%), // #FDFDFF
 	)
 );
