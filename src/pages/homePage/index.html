@@ -232,13 +232,13 @@
 		</header>
 		<main>
 			<h1 class="visually-hidden">Главная страница яхт клуба 'Под парусом'</h1>
-			<section>
-				<div>
-					<h2>Под парусом <span>вместе</span></h2>
-					<div class="slider">
-						<div class="slider-wrapper">
-							<div class="slider-slide">
-								<picture>
+			<section class="hero">
+				<div class="hero__wrapper container">
+					<h2 class="hero__hero-title hero-title hero-title--color--nileBlue">Под парусом <span class="hero-title--color--paleGrey">вместе</span></h2>
+					<div class="hero__hero-slider hero-slider">
+						<div class="hero-slider__wrapper">
+							<div class="hero-slider__slide">
+								<picture class="hero-slider__slide-content">
 									<source
 										type="image/webp"
 										media="(min-width:1366px)"
@@ -250,37 +250,40 @@
 										srcset="../../images/slider-image1-desktop@1x.jpg 1x, ../../images/slider-image1-desktop@2x.jpg 2x"
 									/>
 									<img
+										class="hero-slider__slide-image"
 										src="../../images/slider-image1-desktop@1x.jpg"
 										alt="Парусное судно на закате"
 									/>
 								</picture>
 							</div>
 						</div>
-						<button class="slider-button-prev" type="button">
-							<span class="visually-hidden">Следующий слайд</span>
-							<svg focusable="false" aria-hidden="true">
-								<use xlink:href="#arrow-right"></use>
-							</svg>
-						</button>
-						<button class="slider-button-next" type="button">
-							<span class="visually-hidden">Предыдущий слайд</span>
-							<svg focusable="false" aria-hidden="true">
-								<use xlink:href="#arrow-left"></use>
-							</svg>
-						</button>
+						<div class="hero-slider__controls">
+							<button class="hero-slider__button-prev" type="button">
+								<span class="visually-hidden">Следующий слайд</span>
+								<svg class="hero-slider__button-prev-svg" focusable="false" aria-hidden="true">
+									<use xlink:href="#arrow-right"></use>
+								</svg>
+							</button>
+							<button class="hero-slider__button-next" type="button">
+								<span class="visually-hidden">Предыдущий слайд</span>
+								<svg class="hero-slider__button-next-svg" focusable="false" aria-hidden="true">
+									<use xlink:href="#arrow-left"></use>
+								</svg>
+							</button>
+						</div>
 					</div>
-					<a href="#">
-						<span>Cмотреть далее</span>
-						<svg focusable="false" aria-hidden="true">
+					<a class="hero__show-more-button" href="#">
+						<span class="hero__show-more-button-text">Cмотреть далее</span>
+						<svg class="hero__show-more-button-svg" focusable="false" aria-hidden="true">
 							<use xlink:href="#arrow-down"></use>
 						</svg>
 					</a>
-					<ul>
-						<li>
-							<a href="#">Членство</a>
+					<ul class="hero__vertical-navigation vertical-navigation">
+						<li class="vertical-navigation__element">
+							<a class="vertical-navigation__link" href="#">Членство</a>
 						</li>
-						<li>
-							<a href="#">Прогулки</a>
+						<li class="vertical-navigation__element">
+							<a class="vertical-navigation__link" href="#">Прогулки</a>
 						</li>
 					</ul>
 				</div>
