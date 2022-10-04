@@ -1,0 +1,25 @@
+@use "../abstracts/_mixins.scss" as *;
+
+.vertical-navigation {
+    @include flex(flex-start, center, row);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    z-index: 100;
+}
+
+.vertical-navigation__element {
+    font-size: var(--fs-1366-14);
+    padding-bottom: 2.1428571428571428em;
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.vertical-navigation__link {
+    font-family: var(--ff-normal-600);
+    font-size: inherit;
+    line-height: 1.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--clr-primary-nileBlue);
+}

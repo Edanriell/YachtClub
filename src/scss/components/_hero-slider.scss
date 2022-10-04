@@ -1,0 +1,58 @@
+@use "../abstracts/mixins" as *;
+
+.hero-slider {
+    position: relative;
+}
+
+.hero-slider__wrapper {
+}
+
+.hero-slider__slide {
+}
+
+.hero-slider__slide-content {
+}
+
+.hero-slider__slide-image {
+}
+
+.hero-slider__controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include flex(center, center, row-reverse);
+}
+
+.hero-slider__button-prev {
+    background-color: var(--clr-neutral-paleGrey);
+    width: 9.8rem;
+    height: 7.6rem;
+    position: relative;
+}
+
+.hero-slider__button-prev-svg {
+    width: 1.4rem;
+    height: 1.8rem;
+    fill: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-slider__button-next {
+    background-color: var(--clr-neutral-paleGrey);
+    width: 9.8rem;
+    height: 7.6rem;
+    position: relative;
+}
+
+.hero-slider__button-next-svg {
+    width: 1.4rem;
+    height: 1.8rem;
+    fill: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

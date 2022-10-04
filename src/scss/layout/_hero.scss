@@ -1,0 +1,87 @@
+@use "../abstracts/mixins" as *;
+
+$hero-padding-top: 4rem;
+$hero-padding-bottom: 12rem;
+$hero-grid-columns: "[title-start hero-slider-start show-more-start] 1fr [show-more-end title-end hero-slider-end vertical-navigation-start] 10rem [vertical-navigation-end]";
+$hero-grid-rows: "[vertical-navigation-start title-start] 7rem [hero-slider-start] 7rem [title-end] 1fr [show-more-start] 7.6rem [show-more-end hero-slider-end vertical-navigation-end]";
+
+.hero {
+    position: relative;
+    padding-top: $hero-padding-top;
+    padding-bottom: $hero-padding-bottom;
+}
+
+.hero__wrapper {
+    display: grid;
+    grid-template-columns: #{$hero-grid-columns};
+    grid-template-rows: #{$hero-grid-rows};
+}
+
+.hero__hero-title {
+    grid-column-start: title-start;
+    grid-column-end: title-end;
+    grid-row-start: title-start;
+    grid-row-end: title-end;
+    margin-left: 2.0454545454545453em;
+}
+
+.hero-title {
+    font-family: var(--ff-italic-400);
+    font-size: var(--fs-1366-44);
+    line-height: 6rem;
+    letter-spacing: 0.03em;
+    z-index: 100;
+    text-transform: uppercase;
+}
+
+.hero-title--color--nileBlue {
+    color: var(--clr-primary-nileBlue);
+}
+
+.hero-title--color--paleGrey {
+    display: block;
+    padding-top: 2rem;
+    color: var(--clr-neutral-paleGrey);
+}
+
+.hero__hero-slider {
+    grid-column-start: hero-slider-start;
+    grid-column-end: hero-slider-end;
+    grid-row-start: hero-slider-start;
+    grid-row-end: hero-slider-end;
+    width: 107rem;
+    height: 42.6rem;
+}
+
+.hero__show-more-button {
+    grid-column-start: show-more-start;
+    grid-column-end: show-more-end;
+    grid-row-start: show-more-start;
+    grid-row-end: show-more-end;
+    margin-left: 10rem;
+    z-index: 100;
+    @include flex(center, flex-start, row);
+}
+
+.hero__show-more-button-text {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-10);
+    line-height: 1.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--clr-neutral-paleGrey);
+    padding-right: 1.50em;
+}
+
+.hero__show-more-button-svg {
+    width: 3.1rem;
+    height: 3.1rem;
+    fill: none;
+}
+
+.hero__vertical-navigation {
+    grid-column-start: vertical-navigation-start;
+    grid-column-end: vertical-navigation-end;
+    grid-row-start: vertical-navigation-start;
+    grid-row-end: vertical-navigation-end;
+}
