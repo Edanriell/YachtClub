@@ -8,12 +8,18 @@
 }
 
 .hero-slider__slide {
+    width: 107rem;
+    height: 42.6rem;
 }
 
 .hero-slider__slide-content {
+    width: inherit;
+    height: inherit;
 }
 
 .hero-slider__slide-image {
+    width: inherit;
+    height: inherit;
 }
 
 .hero-slider__controls {
@@ -28,6 +34,7 @@
     width: 9.8rem;
     height: 7.6rem;
     position: relative;
+    cursor: pointer;
 }
 
 .hero-slider__button-prev-svg {
@@ -45,6 +52,7 @@
     width: 9.8rem;
     height: 7.6rem;
     position: relative;
+    cursor: pointer;
 }
 
 .hero-slider__button-next-svg {

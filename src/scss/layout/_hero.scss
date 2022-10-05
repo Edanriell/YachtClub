@@ -53,13 +53,18 @@ $hero-grid-rows: "[vertical-navigation-start title-start] 7rem [hero-slider-star
     height: 42.6rem;
 }
 
-.hero__show-more-button {
+.hero__show-more-button-wrapper {
     grid-column-start: show-more-start;
     grid-column-end: show-more-end;
     grid-row-start: show-more-start;
     grid-row-end: show-more-end;
     margin-left: 10rem;
+    @include flex(flex-end, flex-start, row);
+}
+
+.hero__show-more-button {
     z-index: 100;
+    margin-bottom: 3rem;
     @include flex(center, flex-start, row);
 }
 

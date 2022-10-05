@@ -97,8 +97,16 @@
 				<symbol id="arrow-big-right" viewBox="0 0 25 14">
 					<path d="M0 7L24 7M24 7L17.6842 1M24 7L17.6842 13" stroke="#163152" />
 				</symbol>
+				<symbol id="arrow-big-right-rounded" viewBox="0 0 58 58">
+					<circle cx="29" cy="29" r="28.5" stroke="#163152" />
+					<path d="M17 29H41M41 29L34.6842 23M41 29L34.6842 35" stroke="#163152" />
+				</symbol>
 				<symbol id="arrow-big-left" viewBox="0 0 25 14">
 					<path d="M25 7L1 7M1 7L7.31579 13M1 7L7.31579 1" stroke="#163152" />
+				</symbol>
+				<symbol id="arrow-big-left-rounded" viewBox="0 0 58 58">
+					<circle cx="29" cy="29" r="28.5" stroke="#163152" />
+					<path d="M42 29H18M18 29L24.3158 35M18 29L24.3158 23" stroke="#163152" />
 				</symbol>
 				<symbol id="plate-icon" viewBox="0 0 40 22">
 					<path
@@ -276,12 +284,14 @@
 							</button>
 						</div>
 					</div>
-					<a class="hero__show-more-button" href="#">
-						<span class="hero__show-more-button-text">Cмотреть далее</span>
-						<svg class="hero__show-more-button-svg" focusable="false" aria-hidden="true">
-							<use xlink:href="#arrow-down-rounded"></use>
-						</svg>
-					</a>
+					<div class="hero__show-more-button-wrapper">
+						<a class="hero__show-more-button" href="#">
+							<span class="hero__show-more-button-text">Cмотреть далее</span>
+							<svg class="hero__show-more-button-svg" focusable="false" aria-hidden="true">
+								<use xlink:href="#arrow-down-rounded"></use>
+							</svg>
+						</a>
+					</div>
 					<ul class="hero__vertical-navigation vertical-navigation">
 						<li class="vertical-navigation__element">
 							<a class="vertical-navigation__link text--style--navigation" href="#">Членство</a>
@@ -292,31 +302,31 @@
 					</ul>
 				</div>
 			</section>
-			<section class="activities or upcoming events">
-				<div>
+			<section class="upcoming-events">
+				<div class="upcoming-events__wrapper container">
 					<h2 class="visually-hidden">Ближайшие ивенты</h2>
-					<ul>
-						<li>
-							<article>
-								<div>
-									<p>
-										<time datetime="2020-10-20">20 октября</time>
-										<span>-</span>
-										<time datetime="2021-04-19">19 апреля</time>
+					<ul class="upcoming-events__list upcoming-events-list">
+						<li class="upcoming-events-list__event event">
+							<article class="event event--image-position--right">
+								<div class="event__content-short">
+									<p class="event__date">
+										<time class="event__date-start" datetime="2020-10-20">20 октября</time>
+										<span class="event__date-separator">-</span>
+										<time class="event__date-end" datetime="2021-04-19">19 апреля</time>
 									</p>
-									<h3>Стань частью команды</h3>
-									<p>
+									<h3 class="event__title">Стань частью команды</h3>
+									<p class="event__description-short">
 										Хотите попробовать себя в яхтинге? Наш клуб готов стать их
 										воротами в морскую культуру!
 									</p>
 								</div>
-								<a href="#">
+								<a class="event__link" href="#">
 									<span class="visually-hidden">Перейти по ссылке</span>
-									<svg focusable="false" aria-hidden="true">
-										<use xlink:href="#arrow-big-right"></use>
+									<svg class="event__link-svg" focusable="false" aria-hidden="true">
+										<use xlink:href="#arrow-big-right-rounded"></use>
 									</svg>
 								</a>
-								<picture>
+								<picture class="event__image-wrapper">
 									<source
 										type="image/webp"
 										media="(min-width:1366px)"
@@ -328,33 +338,34 @@
 										srcset="../../images/photo1-desktop@1x.jpg 1x, ../../images/photo1-desktop@2x.jpg 2x"
 									/>
 									<img
+										class="event__image"
 										src="../../images/photo1-desktop@1x.jpg"
 										alt="Мужчина смотрит на уходящий волны"
 									/>
 								</picture>
 							</article>
 						</li>
-						<li>
-							<article>
-								<div>
-									<p>
-										<time datetime="2020-10-26">26 октября</time>
-										<span>-</span>
-										<time datetime="2021-03-31">31 марта</time>
+						<li class="upcoming-events-list__event event">
+							<article class="event event--image-position--left">
+								<div class="event__content-short">
+									<p class="event__date">
+										<time class="event__date-start" datetime="2020-10-26">26 октября</time>
+										<span class="event__date-separator">-</span>
+										<time class="event__date-end" datetime="2021-03-31">31 марта</time>
 									</p>
-									<h3>Рожденные в воде</h3>
-									<p>
+									<h3 class="event__title">Рожденные в воде</h3>
+									<p class="event__description-short">
 										Подарите вашим детям чувство свободы, независимости, а также
 										вкус жизни. Мир ярких эмоций и неописуемых ощущений!
 									</p>
 								</div>
-								<a href="#">
+								<a class="event__link" href="#">
 									<span class="visually-hidden">Перейти по ссылке</span>
-									<svg focusable="false" aria-hidden="true">
-										<use xlink:href="#arrow-big-left"></use>
+									<svg class="event__link-svg" focusable="false" aria-hidden="true">
+										<use xlink:href="#arrow-big-left-rounded"></use>
 									</svg>
 								</a>
-								<picture>
+								<picture class="event__image-wrapper">
 									<source
 										type="image/webp"
 										media="(min-width:1366px)"
@@ -366,6 +377,7 @@
 										srcset="../../images/photo2-desktop@1x.jpg 1x, ../../images/photo2-desktop@2x.jpg 2x"
 									/>
 									<img
+										class="event__image"
 										src="../../images/photo2-desktop@1x.jpg"
 										alt="Мужчина смотрит на уходящий волны"
 									/>
