@@ -306,26 +306,28 @@
 				<div class="upcoming-events__wrapper container">
 					<h2 class="visually-hidden">Ближайшие ивенты</h2>
 					<ul class="upcoming-events__list upcoming-events-list">
-						<li class="upcoming-events-list__event event">
+						<li class="upcoming-events-list__event">
 							<article class="event event--image-position--right">
 								<div class="event__content-short">
-									<p class="event__date">
-										<time class="event__date-start" datetime="2020-10-20">20 октября</time>
-										<span class="event__date-separator">-</span>
-										<time class="event__date-end" datetime="2021-04-19">19 апреля</time>
-									</p>
-									<h3 class="event__title">Стань частью команды</h3>
-									<p class="event__description-short">
-										Хотите попробовать себя в яхтинге? Наш клуб готов стать их
-										воротами в морскую культуру!
-									</p>
+									<div class="event__content-short-wrapper">
+										<p class="event__date">
+											<time class="event__date-start" datetime="2020-10-20">20 октября</time>
+											<span class="event__date-separator">-</span>
+											<time class="event__date-end" datetime="2021-04-19">19 апреля</time>
+										</p>
+										<h3 class="event__title">Стань частью команды</h3>
+										<p class="event__description-short">
+											Хотите попробовать себя в яхтинге? Наш клуб готов стать их
+											воротами в морскую культуру!
+										</p>
+									</div>
+									<a class="event__link" href="#">
+										<span class="visually-hidden">Перейти по ссылке</span>
+										<svg class="event__link-svg" focusable="false" aria-hidden="true">
+											<use xlink:href="#arrow-big-right-rounded"></use>
+										</svg>
+									</a>
 								</div>
-								<a class="event__link" href="#">
-									<span class="visually-hidden">Перейти по ссылке</span>
-									<svg class="event__link-svg" focusable="false" aria-hidden="true">
-										<use xlink:href="#arrow-big-right-rounded"></use>
-									</svg>
-								</a>
 								<picture class="event__image-wrapper">
 									<source
 										type="image/webp"
@@ -345,26 +347,28 @@
 								</picture>
 							</article>
 						</li>
-						<li class="upcoming-events-list__event event">
+						<li class="upcoming-events-list__event">
 							<article class="event event--image-position--left">
 								<div class="event__content-short">
-									<p class="event__date">
-										<time class="event__date-start" datetime="2020-10-26">26 октября</time>
-										<span class="event__date-separator">-</span>
-										<time class="event__date-end" datetime="2021-03-31">31 марта</time>
-									</p>
-									<h3 class="event__title">Рожденные в воде</h3>
-									<p class="event__description-short">
-										Подарите вашим детям чувство свободы, независимости, а также
-										вкус жизни. Мир ярких эмоций и неописуемых ощущений!
-									</p>
+									<div class="event__content-short-wrapper">
+										<p class="event__date">
+											<time class="event__date-start" datetime="2020-10-26">26 октября</time>
+											<span class="event__date-separator">-</span>
+											<time class="event__date-end" datetime="2021-03-31">31 марта</time>
+										</p>
+										<h3 class="event__title">Рожденные в воде</h3>
+										<p class="event__description-short">
+											Подарите вашим детям чувство свободы, независимости, а также
+											вкус жизни. Мир ярких эмоций и неописуемых ощущений!
+										</p>
+									</div>
+									<a class="event__link" href="#">
+										<span class="visually-hidden">Перейти по ссылке</span>
+										<svg class="event__link-svg" focusable="false" aria-hidden="true">
+											<use xlink:href="#arrow-big-left-rounded"></use>
+										</svg>
+									</a>
 								</div>
-								<a class="event__link" href="#">
-									<span class="visually-hidden">Перейти по ссылке</span>
-									<svg class="event__link-svg" focusable="false" aria-hidden="true">
-										<use xlink:href="#arrow-big-left-rounded"></use>
-									</svg>
-								</a>
 								<picture class="event__image-wrapper">
 									<source
 										type="image/webp"
@@ -387,13 +391,13 @@
 					</ul>
 				</div>
 			</section>
-			<section>
-				<div>
-					<h2>Аренда яхты</h2>
-					<ul>
-						<li>
-							<article>
-								<h3>Катер Meridian 401</h3>
+			<section class="yacht-rent">
+				<div class="yacht-rent__wrapper container">
+					<h2 class="section-title section-title--position--center">Аренда яхты</h2>
+					<ul class="yacht-rent__yacht-rent-list yacht-rent-list">
+						<li class="yacht-rent-list__rent-offer">
+							<article class="rent-offer">
+								<h3 class="rent-offer__title">Катер Meridian 401</h3>
 								<picture>
 									<source
 										type="image/webp"
@@ -427,9 +431,9 @@
 								</p>
 							</article>
 						</li>
-						<li>
-							<article>
-								<h3>Катер 60 Manhattan</h3>
+						<li class="yacht-rent-list__rent-offer">
+							<article class="rent-offer">
+								<h3 class="rent-offer__title">Катер 60 Manhattan</h3>
 								<picture>
 									<source
 										type="image/webp"
@@ -463,9 +467,9 @@
 								</p>
 							</article>
 						</li>
-						<li>
-							<article>
-								<h3>Катер Starfisher 34</h3>
+						<li class="yacht-rent-list__rent-offer">
+							<article class="rent-offer">
+								<h3 class="rent-offer__title">Катер Starfisher 34</h3>
 								<picture>
 									<source
 										type="image/webp"

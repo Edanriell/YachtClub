@@ -1,41 +1,143 @@
+@use "../abstracts/mixins" as *;
+
 .event {
+	@include flex(center, center, row);
+    column-gap: 7rem;
 }
 
 .event--image-position--right {
+    padding-left: 7rem;
+
+    .event__content-short {
+        column-gap: 8.5rem;
+        text-align: left;
+    }
+    
+    .event__content-short-wrapper {
+        @include flex(flex-start, flex-start, column);
+    }
+
+    .event__title::after {
+        margin-right: auto;
+    }
+
+    .event__image-wrapper {
+        width: 60rem;
+        height: 26.2rem;
+    }
 }
 
 .event--image-position--left {
+    padding-right: 7rem;
+
+    .event__content-short {
+        column-gap: 14rem;
+        text-align: right;
+    }
+
+    .event__content-short-wrapper {
+        @include flex(flex-end, flex-end, column);
+    }
+
+    .event__title::after {
+        margin-left: auto;
+    }
+
+    .event__image-wrapper {
+        width: 50rem;
+        height: 25.2rem;
+        order: -2;
+    }
+
+    .event__link {
+        order: -1;
+    }
 }
 
 .event__content-short {
+    @include flex(flex-end, flex-end, row);
 }
 
 .event__date {
+    color: var(--clr-primary-nileBlue);
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-14);
+    line-height: 1.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 0.7142857142857143em;
 }
 
 .event__date-start {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
 }
 
 .event__date-separator {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
 }
 
 .event__date-end {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
 }
 
 .event__title {
+    color: var(--clr-primary-nileBlue);
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-24);
+    line-height: 3.4rem;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 13rem;
+        height: 0.2rem;
+        background-color: var(--clr-accent-darkTurquoise);
+        font-size: var(--fs-1366-24);
+        margin-top: 0.54166666666666664em;
+    }
 }
 
 .event__description-short {
+    color: var(--clr-primary-darkBlueGrey);
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-16);
+    line-height: 2.4rem;
+    margin-top: 1.25em;
 }
 
 .event__link {
+    align-self: flex-end;
 }
 
 .event__link-svg {
+    width: 5.8rem;
+    height: 5.8rem;
+    fill: none;
+    vertical-align: middle;
 }
 
 .event__image-wrapper {
+    display: block;
+    position: relative;
 }
 
 .event__image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }

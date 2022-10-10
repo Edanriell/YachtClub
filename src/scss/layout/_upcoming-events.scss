@@ -1,8 +1,13 @@
+@use "../abstracts/mixins" as *;
+
 .upcoming-events {
+    padding-bottom: 12rem;
 }
 
 .upcoming-events__wrapper {
+    position: relative;
 }
 
 .upcoming-events__list {
+    @include flex(flex-start, flex-start, column);
 }
