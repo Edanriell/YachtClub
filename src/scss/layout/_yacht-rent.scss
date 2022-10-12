@@ -1,0 +1,17 @@
+@use "../abstracts/mixins" as *;
+
+.yacht-rent {
+    display: block;
+    position: relative;
+}
+
+.yacht-rent__wrapper {
+    display: block;
+    position: relative;
+}
+
+.yacht-rent__yacht-rent-list {
+    @include flex(center, space-between, row);
+    flex-wrap: wrap;
+}
+

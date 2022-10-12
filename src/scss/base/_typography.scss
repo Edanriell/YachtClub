@@ -9,3 +9,27 @@
     text-transform: uppercase;
     color: var(--clr-primary-nileBlue);
 }
+
+.section-title {
+    color: var(--clr-primary-nileBlue);
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-24);
+    line-height: 3.4rem;
+
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        width: 14rem;
+        height: 0.2rem;
+        background-color: var(--clr-accent-darkTurquoise);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.3rem;
+        margin-bottom: 0;
+    }
+}
+
+.section-title--position--center {
+    text-align: center;
+}

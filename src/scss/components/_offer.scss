@@ -1,0 +1,72 @@
+@use "../abstracts/mixins" as *;
+
+.offer {
+    max-width: 37rem;
+    padding: 3rem;
+    background-color: var(--clr-neutral-paleGrey);
+    box-shadow: 0px 4px 30px rgba(22, 49, 82, 0.12);
+}
+
+.offer__title {
+    color: var(--clr-primary-nileBlue);
+    font-family: var(--ff-normal-500);
+    font-size: var(--fs-1366-20);
+    line-height: 2.7rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.offer__image-wrapper {
+    width: 31rem;
+    height: 14.1rem;
+}
+
+.offer__image {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.offer__description {
+    color: var(--clr-primary-darkBlueGrey);
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-14);
+    line-height: 2.4rem;
+    margin-top: 1.0714285714285714em;
+    margin-bottom: 1.0714285714285714em;
+}
+
+.offer__features-list {
+    @include flex(flex-start, flex-start, column);
+    row-gap: 0.4rem;
+    margin-bottom: 2.5rem;
+}
+
+.offer__feature {
+    color: var(--clr-primary-darkBlueGrey);
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-14);
+    line-height: 1.9rem;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: var(--clr-accent-darkTurquoise);
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+}
+
+.offer__price {
+    @include flex(center, space-between, row);
+}
+
+.offer__price-text {
+    color: var(--clr-primary-nileBlue);
+    font-family: var(--ff-normal-500);
+    font-size: var(--fs-1366-18);
+    line-height: 2.5rem;
+}
