@@ -1,8 +1,17 @@
 .vibe {
+    display: block;
+    position: relative;
 }
 
 .vibe__wrapper {
+    display: block;
+    position: relative;
+    padding-top: 12rem;
 }
 
 .vibe__video {
+    display: grid;
+    grid-template-columns: 20rem 20rem 23rem 20rem 20rem;
+    grid-template-rows: auto;
+    justify-content: center;
 }

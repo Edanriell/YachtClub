@@ -548,6 +548,7 @@
 									preload="metadata"
 									controls
 								></video>
+								<div class="video__player-overlay"></div>
 							</div>
 							<div class="video__controls">
 								<button class="video__play-button" type="button">
@@ -566,21 +567,21 @@
 								media="(min-width:1366px)"
 								srcset="../../images/boat3-desktop@1x.jpg 1x, ../../images/boat3-desktop@2x.jpg 2x"
 							/>
-							<img src="../../images/boat3-desktop@1x.jpg" class="video__decorative-image-1-wrapper" alt="Фотография лодки" />
+							<img src="../../images/boat3-desktop@1x.jpg" class="video__decorative-image-1" alt="Фотография лодки" />
 						</picture>
 					</div>
 				</div>
 			</section>
-			<section>
-				<div>
-					<div>
-						<h2>Кают-компания</h2>
-						<p>
+			<section class="about-club">
+				<div class="about-club__wrapper container">
+					<div class="about-club__short-introduction">
+						<h2 class="section-title section-title--position--left">Кают-компания</h2>
+						<p class="about-club__introduction-text">
 							Наш клуб является партнером одного из лучших 5-звездочных отелей
 							города,Hyatt Regency. Мы обеспечиваем лучшее обслуживание и сервис, чтобы
 							сделать ваш отдых идеальным.
 						</p>
-						<picture>
+						<picture class="about-club__image-wrapper">
 							<source
 								type="image/webp"
 								media="(min-width:1366px)"
@@ -591,46 +592,46 @@
 								media="(min-width:1366px)"
 								srcset="../../images/picture1-desktop@1x.jpg 1x, ../../images/picture1-desktop@2x.jpg 2x"
 							/>
-							<img src="../../images/picture1-desktop@1x.jpg" alt="Фотография лодки" />
+							<img class="about-club__image" src="../../images/picture1-desktop@1x.jpg" alt="Фотография лодки" />
 						</picture>
 					</div>
-					<div>
-						<dl>
-							<div>
-								<dt>
-									<svg focusable="false" aria-hidden="true">
+					<div class="about-club__special-features">
+						<dl class="special-features">
+							<div class="special-features__feature">
+								<dt class="special-features__feature-name">
+									<svg class="special-features__feature-icon" focusable="false" aria-hidden="true">
 										<use xlink:href="#plate-icon"></use>
 									</svg>
-									<p>Изысканная кухня</p>
+									<p class="special-features__feature-name-text">Изысканная кухня</p>
 								</dt>
-								<dd>Блюда средиземноморской кухни от лучших поваров</dd>
+								<dd class="special-features__feature-description">Блюда средиземноморской кухни от лучших поваров</dd>
 							</div>
-							<div>
-								<dt>
-									<svg focusable="false" aria-hidden="true">
+							<div class="special-features__feature">
+								<dt class="special-features__feature-name">
+									<svg class="special-features__feature-icon" focusable="false" aria-hidden="true">
 										<use xlink:href="#double-bed-icon"></use>
 									</svg>
-									<p>Полный комфорт</p>
+									<p class="special-features__feature-name-text">Полный комфорт</p>
 								</dt>
-								<dd>Большие ортопедические двуспальные кровати</dd>
+								<dd class="special-features__feature-description">Большие ортопедические двуспальные кровати</dd>
 							</div>
-							<div>
-								<dt>
-									<svg focusable="false" aria-hidden="true">
+							<div class="special-features__feature">
+								<dt class="special-features__feature-name">
+									<svg class="special-features__feature-icon" focusable="false" aria-hidden="true">
 										<use xlink:href="#cocktail-icon"></use>
 									</svg>
-									<p>Фирменные напитки</p>
+									<p class="special-features__feature-name-text">Фирменные напитки</p>
 								</dt>
-								<dd>Огромный выбор вкуснейших освежающих коктейлей</dd>
+								<dd class="special-features__feature-description">Огромный выбор вкуснейших освежающих коктейлей</dd>
 							</div>
-							<div>
-								<dt>
-									<svg focusable="false" aria-hidden="true">
+							<div class="special-features__feature">
+								<dt class="special-features__feature-name">
+									<svg class="special-features__feature-icon" focusable="false" aria-hidden="true">
 										<use xlink:href="#handshake-icon"></use>
 									</svg>
-									<p>Помощь во всем</p>
+									<p class="special-features__feature-name-text">Помощь во всем</p>
 								</dt>
-								<dd>Выполним любую просьбу и сделаем все, что захотите</dd>
+								<dd class="special-features__feature-description">Выполним любую просьбу и сделаем все, что захотите</dd>
 							</div>
 						</dl>
 					</div>
