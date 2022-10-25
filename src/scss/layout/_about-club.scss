@@ -1,30 +1,79 @@
+@use "../abstracts/mixins" as *;
+
 .about-club {
+    position: relative;
 }
+
 .about-club__wrapper {
+    padding-top: 12rem;
+    @include flex(flex-start, flex-start, row);
+    flex-wrap: wrap;
+    column-gap: 10rem;
 }
+
 .about-club__short-introduction {
+   max-width: 43rem; 
 }
-.section-title {
-}
-.section-title--position--left {
-}
+
 .about-club__introduction-text {
+    text-align: left;
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-16);
+    line-height: 2.4rem;
+    color: var(--clr-primary-darkBlueGrey);
+    padding-bottom: 1.0625em;
 }
+
 .about-club__image-wrapper {
+    width: 43rem;
+    height: 17.7rem;
 }
+
 .about-club__image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: middle;
 }
+
 .about-club__special-features {
 }
+
 .special-features {
 }
+
 .special-features__feature {
 }
+
 .special-features__feature-name {
 }
-.special-features__feature-icon {
+
+.special-features__feature-plate-icon {
+    width: 4rem;
+    height: 2.2rem;
+    fill: none;
 }
+
+.special-features__feature-bed-icon {
+    width: 3.5rem;
+    height: 2.1rem;
+    fill: none;
+}
+
+.special-features__feature-cocktail-icon {
+    width: 2.9rem;
+    height: 2.9rem;
+    fill: none;
+}
+
+.special-features__feature-handshake-icon {
+    width: 3.4rem;
+    height: 2.9rem;
+    fill: none;
+}
+
 .special-features__feature-name-text {
 }
+
 .special-features__feature-description {
 }
