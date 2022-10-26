@@ -64,6 +64,19 @@
     }
 }
 
+.section-title--underline--11rem {
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        width: 11rem;
+        height: 0.2rem;
+        background-color: var(--clr-accent-darkTurquoise);
+        margin-top: 1.3rem;
+        margin-bottom: 0;
+    }
+}
+
 .section-title--underline--center {
     &::after {
         margin-left: auto;
