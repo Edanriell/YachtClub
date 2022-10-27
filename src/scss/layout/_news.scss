@@ -1,9 +1,16 @@
 .news {
+    position: relative;
 }
 
 .news__wrapper {
+    padding-top: 12rem;
 }
 
 .news__news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 2.7rem;
 }
 
