@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .article {
     position: relative;
     background-color: var(--clr-neutral-paleGrey);
@@ -26,16 +28,19 @@
     .article__title {
         font-size: var(--fs-1366-22);
         line-height: 3rem;
+        margin-top: 0.909090909090909em;
     }
 
     .article__text {
         font-size: var(--fs-1366-18);
         line-height: 2.6rem;
+        margin-top: 0.6666666666666666em;
     }
 
     .article__author-picture-wrapper {
         width: 6rem;
         height: 6rem;
+        margin-right: 1.5rem;
     }
 
     .article__share-link {
@@ -52,6 +57,19 @@
         padding-left: 4rem;
         padding-right: 4rem;
         padding-bottom: 4rem;
+        margin-top: 4rem;
+    }
+
+    .article__author-name {
+        font-size: var(--fs-1366-16);
+        line-height: 2.179rem;
+    }
+
+    .article__creation-time {
+        font-size: var(--fs-1366-16);
+        line-height: 2.179rem;
+        letter-spacing: 0.04em;
+        margin-top: 0.375em;
     }
 }
 
@@ -79,16 +97,19 @@
     .article__title {
         font-size: var(--fs-1366-16);
         line-height: 2.2rem;
+        margin-top: 0.75em;
     }
 
     .article__text {
         font-size: var(--fs-1366-14);
         line-height: 1.9rem;
+        margin-top: 0.5714285714285714em;
     }
 
     .article__author-picture-wrapper {
         width: 3.7rem;
         height: 3.7rem;
+        margin-right: 1rem;
     }
 
     .article__share-link {
@@ -105,13 +126,31 @@
         padding-left: 2rem;
         padding-right: 2rem;
         padding-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    .article__author-name {
+        font-size: var(--fs-1366-12);
+        line-height: 1.634rem;
+    }
+
+    .article__creation-time {
+        font-size: var(--fs-1366-12);
+        line-height: 1.634rem;
+        margin-top: 0.4166666666666667em;
     }
 }
 
 .article__header {
+    position: relative;
+}
+
+.article__image-figure {
+    position: relative;
 }
 
 .article__image-wrapper {
+    position: relative;
 }
 
 .article__image {
@@ -127,6 +166,7 @@
 }
 
 .article__content {
+    position: relative;
 }
 
 .article__link {
@@ -135,7 +175,7 @@
 }
 
 .article__title {
-
+    position: relative;
 }
 
 .article__text {
@@ -144,6 +184,7 @@
 }
 
 .article__footer {
+    @include flex(center, flex-start, row);
 }
 
 .article__author-picture-wrapper {
@@ -159,13 +200,19 @@
 }
 
 .article__author-name {
+    font-family: var(--ff-normal-600);
+    color: var(--clr-primary-darkBlueGrey);
 }
 
 .article__creation-time {
+    font-family: var(--ff-normal-400);
+    color: var(--clr-primary-darkBlueGreyHalfTransparent);
 }
 
 .article__share-link {
     fill: none;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .article__share-icon {
@@ -173,4 +220,8 @@
     height: inherit;
     vertical-align: middle;
     fill: inherit;
+}
+
+.article__footer-content {
+    @include flex(flex-start, flex-start, column);
 }

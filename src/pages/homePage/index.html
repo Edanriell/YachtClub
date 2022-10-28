@@ -600,8 +600,8 @@
 						<li class="news-list__item news-list__item--size--large">
 							<article class="article article--size--large">
 								<header class="article__header">
-									<figure class="article__image-wrapper">
-										<picture>
+									<figure class="article__image-figure">
+										<picture class="article__image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
@@ -649,8 +649,10 @@
 											alt="Артем Колесников"
 										/>
 									</picture>
-									<a class="article__author-name" href="#">Артем Колесников</a>
-									<time class="article__creation-time" datetime="2020-06-20">20.06.2020</time>
+									<div class="article__footer-content">
+										<a class="article__author-name" href="#">Артем Колесников</a>
+										<time class="article__creation-time" datetime="2020-06-20">20.06.2020</time>
+									</div>
 									<a class="article__share-link" href="#">
 										<svg class="article__share-icon" focusable="false" aria-hidden="true">
 											<use xlink:href="#share-icon"></use>
@@ -663,8 +665,8 @@
 						<li class="news-list__item news-list__item--size--small">
 							<article class="article article--size--small">
 								<header class="article__header">
-									<figure class="article__image-wrapper">
-										<picture>
+									<figure class="article__image-figure">
+										<picture class="article__image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
@@ -711,8 +713,10 @@
 											alt="Денис Иванов"
 										/>
 									</picture>
-									<a class="article__author-name" href="#">Денис Иванов</a>
-									<time class="article__creation-time" datetime="2020-06-15">15.06.2020</time>
+									<div class="article__footer-content">
+										<a class="article__author-name" href="#">Денис Иванов</a>
+										<time class="article__creation-time" datetime="2020-06-15">15.06.2020</time>
+									</div>
 									<a class="article__share-link" href="#">
 										<svg class="article__share-icon" focusable="false" aria-hidden="true">
 											<use xlink:href="#share-icon"></use>
@@ -725,8 +729,8 @@
 						<li class="news-list__item news-list__item--size--small">
 							<article class="article article--size--small">
 								<header class="article__header">
-									<figure class="article__image-wrapper">
-										<picture>
+									<figure class="article__image-figure">
+										<picture class="article__image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
@@ -774,8 +778,10 @@
 											alt="Фотография лодки"
 										/>
 									</picture>
-									<a class="article__author-name" href="#">Денис Иванов</a>
-									<time class="article__creation-time" datetime="2020-06-10">10.06.2020</time>
+									<div class="article__footer-content">
+										<a class="article__author-name" href="#">Денис Иванов</a>
+										<time class="article__creation-time" datetime="2020-06-10">10.06.2020</time>
+									</div>
 									<a class="article__share-link" href="#">
 										<svg class="article__share-icon" focusable="false" aria-hidden="true">
 											<use xlink:href="#share-icon"></use>
@@ -788,54 +794,54 @@
 					</ul>
 				</div>
 			</section>
-			<section>
-				<div>
-					<h2>Календарь соревнований, январь 2021</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Название соревнования</th>
-								<th>Даты проведения</th>
-								<th>Участвующие классы</th>
-								<th>Категория</th>
-								<th>Место проведения</th>
+			<section class="competition-calendar">
+				<div class="competition-calendar__wrapper container">
+					<h2 class="section-title section-title--position--left section-title--underline--37rem section-title--underline--left">Календарь соревнований, январь 2021</h2>
+					<table class="competition-calendar__table table">
+						<thead class="table__head">
+							<tr class="table__row">
+								<th class="table__column-title">Название соревнования</th>
+								<th class="table__column-title">Даты проведения</th>
+								<th class="table__column-title">Участвующие классы</th>
+								<th class="table__column-title">Категория</th>
+								<th class="table__column-title">Место проведения</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>Кубок Сибири</td>
-								<td>10-15 января</td>
-								<td>Буер Ледовый оптимист</td>
-								<td>БУЕР</td>
-								<td>г. Новосибирск</td>
+						<tbody class="table__body">
+							<tr class="table__row table__row--style--gray">
+								<td class="table__column-text">Кубок Сибири</td>
+								<td class="table__column-text">10-15 января</td>
+								<td class="table__column-text">Буер Ледовый оптимист</td>
+								<td class="table__column-text">БУЕР</td>
+								<td class="table__column-text">г. Новосибирск</td>
 							</tr>
-							<tr>
-								<td>Черноморская регата</td>
-								<td>12-18 января</td>
-								<td>29-й, 420, 49-й FX, RS:X</td>
-								<td>Гонки флота</td>
-								<td>г. Сочи</td>
+							<tr class="table__row">
+								<td class="table__column-text">Черноморская регата</td>
+								<td class="table__column-text">12-18 января</td>
+								<td class="table__column-text">29-й, 420, 49-й FX, RS:X</td>
+								<td class="table__column-text">Гонки флота</td>
+								<td class="table__column-text">г. Сочи</td>
 							</tr>
-							<tr>
-								<td>Первенство России</td>
-								<td>19-23 января</td>
-								<td>Кайтбординг курс-рейс</td>
-								<td>Кайтбординг</td>
-								<td>г. Тольятти</td>
+							<tr class="table__row table__row--style--gray">
+								<td class="table__column-text">Первенство России</td>
+								<td class="table__column-text">19-23 января</td>
+								<td class="table__column-text">Кайтбординг курс-рейс</td>
+								<td class="table__column-text">Кайтбординг</td>
+								<td class="table__column-text">г. Тольятти</td>
 							</tr>
-							<tr>
-								<td>Sailing League</td>
-								<td>20-22 января</td>
-								<td>J70</td>
-								<td>Гонки флота</td>
-								<td>г. Санкт-Петербург</td>
+							<tr class="table__row">
+								<td class="table__column-text">Sailing League</td>
+								<td class="table__column-text">20-22 января</td>
+								<td class="table__column-text">J70</td>
+								<td class="table__column-text">Гонки флота</td>
+								<td class="table__column-text">г. Санкт-Петербург</td>
 							</tr>
-							<tr>
-								<td>Первенство класса</td>
-								<td>25-29 января</td>
-								<td>РУЯ: M</td>
-								<td>РУЯ</td>
-								<td>г. Астрахань</td>
+							<tr class="table__row table__row--style--gray">
+								<td class="table__column-text">Первенство класса</td>
+								<td class="table__column-text">25-29 января</td>
+								<td class="table__column-text">РУЯ: M</td>
+								<td class="table__column-text">РУЯ</td>
+								<td class="table__column-text">г. Астрахань</td>
 							</tr>
 						</tbody>
 					</table>
