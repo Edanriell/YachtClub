@@ -1,38 +1,145 @@
+@use "../abstracts/mixins" as *;
+
 .form {
+    padding-left: 7rem;
+    display: grid;
+    grid-template-rows: repeat(6, auto);
 }
 
 .form__description {
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-primary-darkBlueGrey);
+    max-width: 31rem;
+    margin-top: 1.25em;
+    margin-bottom: 1.875em;
 }
 
 .form__field {
+    position: relative;
+}
+
+.form__field--type--text {
+    @include flex(flex-start, flex-start, column);
+}
+
+.form__field--type--tel {
+    @include flex(flex-start, flex-start, column);
+}
+
+.form__field--type--email {
+    @include flex(flex-start, flex-start, column);
+}
+
+.form__field--type--checkbox {
+    @include flex(flex-start, flex-end, row-reverse);
+    margin-bottom: 2.2rem;
 }
 
 .form__field-label {
+    position: relative;
+}
+
+.form__field-label--type--text {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-primary-darkBlueGrey);
+    margin-bottom: 0.625em;
+}
+
+.form__field-label--type--tel {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-primary-darkBlueGrey);
+    margin-bottom: 0.625em;
+}
+
+.form__field-label--type--email {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-primary-darkBlueGrey);
+    margin-bottom: 0.625em;
+}
+
+.form__field-label--type--checkbox {
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-12);
+    line-height: 1.6rem;
+    color: var(--clr-primary-darkBlueGrey);
+    margin-top: 0.3rem;
 }
 
 .form__field-input {
+    all: unset;
 }
 
 .form__field-input--type--text {
+    margin-bottom: 2rem;
+    border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
+    width: 41rem;
+    padding: 1rem;
+
+    &::placeholder {
+        font-family: var(--ff-normal-400);
+        font-size: var(--fs-1366-16);
+        line-height: 2.2rem;
+        color: var(--clr-primary-darkBlueGreyHalfTransparent2);
+    }
 }
 
 .form__field-input--type--tel {
+    margin-bottom: 2rem;
+    border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
+    width: 41rem;
+    padding: 1rem;
+
+    &::placeholder {
+        font-family: var(--ff-normal-400);
+        font-size: var(--fs-1366-16);
+        line-height: 2.2rem;
+        color: var(--clr-primary-darkBlueGreyHalfTransparent2);
+    }
 }
 
 .form__field-input--type--email {
+    margin-bottom: 3rem;
+    border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
+    width: 41rem;
+    padding: 1rem;
+
+    &::placeholder {
+        font-family: var(--ff-normal-400);
+        font-size: var(--fs-1366-16);
+        line-height: 2.2rem;
+        color: var(--clr-primary-darkBlueGreyHalfTransparent2);
+    }
 }
 
 .form__field-input--type--checkbox {
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
+    margin-right: 1rem;
+
+    &:checked {
+        border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
+        appearance: auto;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
 }
 
 .form__button-submit {
-}
-
-.event-participant-registration__form-image {
-}
-
-.form-image__wrapper {
-}
-
-.form-image {
+    width: 100%;
+    height: 4.8rem;
+    background-color: var(--clr-accent-darkTurquoise);
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-neutral-paleGrey);
+    cursor: pointer;
 }

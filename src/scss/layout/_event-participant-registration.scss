@@ -1,8 +1,28 @@
 .event-participant-registration {
+    position: relative;
 }
 
 .event-participant-registration__wrapper {
+    display: grid;
+    grid-template-columns: 50rem 60rem;
+    grid-template-rows: auto 1fr;
+    column-gap: 7rem;
+    padding-top: 12rem;
+}
+
+.event-participant-registration__section-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-left: 7rem;
+    max-width: 42rem;
 }
 
 .event-participant-registration__form {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.event-participant-registration__form-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
 }
