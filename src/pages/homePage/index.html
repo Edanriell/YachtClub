@@ -918,10 +918,10 @@
 					</div>
 				</div>
 			</section>
-			<section>
-				<div>
-					<div>
-						<picture>
+			<section class="contacts">
+				<div class="contacts__wrapper container">
+					<div class="contacts__map">
+						<picture class="map__wrapper">
 							<source
 								type="image/webp"
 								media="(min-width:1366px)"
@@ -932,38 +932,38 @@
 								media="(min-width:1366px)"
 								srcset="../../images/map-desktop@1x.jpg 1x, ../../images/map-desktop@2x.jpg 2x"
 							/>
-							<img src="../../images/map-desktop@1x.jpg" alt="Карта" />
+							<img class="map" src="../../images/map-desktop@1x.jpg" alt="Карта" />
 						</picture>
 					</div>
-					<div>
-						<h2>Контакты</h2>
-						<address>
-							<dl>
-								<div>
-									<dt>Адрес:</dt>
-									<dd>г. Сочи, ул. Бзугу, 9</dd>
+					<div class="contacts__address">
+						<h2 class="section-title section-title--position--left section-title--underline--10rem section-title--underline--left">Контакты</h2>
+						<address class="address">
+							<dl class="address__wrapper">
+								<div class="address__field">
+									<dt class="address__field-name">Адрес:</dt>
+									<dd class="address__field-content">г. Сочи, ул. Бзугу, 9</dd>
 								</div>
-								<div>
-									<dt>Телефон:</dt>
-									<dd>
+								<div class="address__field">
+									<dt class="address__field-name">Телефон:</dt>
+									<dd class="address__field-content">
 										<a href="tel:+8622620563">8 (622) 62-05-63</a>
 									</dd>
 								</div>
-								<div>
-									<dt>E-mail:</dt>
-									<dd>
+								<div class="address__field">
+									<dt class="address__field-name">E-mail:</dt>
+									<dd class="address__field-content">
 										<a href="mailto:yachtclub-sochi@mail.ru"
 											>yachtclub-sochi@mail.ru</a
 										>
 									</dd>
 								</div>
-								<div>
-									<dt>Мы в социальных сетях:</dt>
-									<dd>
-										<ul>
-											<li>
-												<a href="#">
-													<svg focusable="false" aria-hidden="true">
+								<div class="address__field">
+									<dt class="address__field-name">Мы в социальных сетях:</dt>
+									<dd class="address__field-content">
+										<ul class="address__social-buttons-list social-buttons-list">
+											<li class="social-buttons-list__item">
+												<a class="social-buttons-list__link" href="#">
+													<svg class="social-buttons-list__facebook-icon" focusable="false" aria-hidden="true">
 														<use xlink:href="#facebook-icon"></use>
 													</svg>
 													<span class="visually-hidden"
@@ -971,9 +971,9 @@
 													>
 												</a>
 											</li>
-											<li>
-												<a href="#">
-													<svg focusable="false" aria-hidden="true">
+											<li class="social-buttons-list__item">
+												<a class="social-buttons-list__link" href="#">
+													<svg class="social-buttons-list__twitter-icon" focusable="false" aria-hidden="true">
 														<use xlink:href="#twitter-icon"></use>
 													</svg>
 													<span class="visually-hidden"
@@ -981,9 +981,9 @@
 													>
 												</a>
 											</li>
-											<li>
-												<a href="#">
-													<svg focusable="false" aria-hidden="true">
+											<li class="social-buttons-list__item">
+												<a class="social-buttons-list__link" href="#">
+													<svg class="social-buttons-list__instagram-icon" focusable="false" aria-hidden="true">
 														<use xlink:href="#instagram-icon"></use>
 													</svg>
 													<span class="visually-hidden"
