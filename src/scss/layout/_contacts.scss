@@ -1,12 +1,20 @@
 .contacts {
+    position: relative;
 }
 
 .contacts__wrapper {
+    padding-top: 12rem;
+    display: grid;
+    grid-template-columns: 67rem auto;
+    column-gap: 10rem;
 }
 
 .contacts__map {
+    position: relative;
 }
 
 .contacts__address {
+    position: relative;
+    padding-top: 5rem;
 }
 

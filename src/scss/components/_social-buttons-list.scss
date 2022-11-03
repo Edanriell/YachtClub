@@ -1,17 +1,33 @@
+@use "../abstracts/mixins" as *;
+
 .social-buttons-list {
+    @include flex(flex-start, flex-start, row);
+    column-gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .social-buttons-list__item {
+    position: relative;
 }
 
 .social-buttons-list__link {
+    position: relative;
 }
 
 .social-buttons-list__facebook-icon {
+    fill: none;
+    width: 4rem;
+    height: 4rem;
 }
 
 .social-buttons-list__twitter-icon {
+    fill: none;
+    width: 4rem;
+    height: 4rem;
 }
 
 .social-buttons-list__instagram-icon {
+    fill: none;
+    width: 4rem;
+    height: 4rem;
 }

@@ -1,5 +1,11 @@
 .map {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: middle;
 }
 
 .map__wrapper {
+    width: 67rem;
+    height: 35.1rem;
 }
