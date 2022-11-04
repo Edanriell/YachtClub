@@ -1,20 +1,41 @@
+@use "../abstracts/mixins" as *;
+
 .footer {
+    position: relative;
 }
 
 .footer__wrapper {
+    padding-top: 12rem;
+    padding-bottom: 6.4rem;
+    @include flex(flex-start, flex-start, row);
 }
 
 .footer__info {
+    @include flex(flex-start, flex-start, column);
+    margin-right: 13rem;
 }
 
 .footer__logotype-link {
+    position: relative;
+    margin-bottom: 2.2rem;
 }
 
 .footer__logotype {
+    width: 10rem;
+    height: 10.6rem;
+    object-fit: cover;
+    vertical-align: middle;
+    fill: none;
 }
 
 .footer__info-text {
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-10);
+    line-height: 1.4rem;
+    color: var(--clr-primary-darkBlueGrey);
+    padding-top: 0.8em;
 }
 
 .footer__secondary-navigation {
+    position: relative;
 }
