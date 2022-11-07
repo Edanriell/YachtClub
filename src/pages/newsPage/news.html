@@ -193,42 +193,42 @@
 			</div>
 		</header>
 		<main>
-			<ol>
-				<li>
-					<a href="#">Главная</a>
-				</li>
-				<li>
-					<a href="#">Новости</a>
-				</li>
-				<li>
-					<a href="#">Открытие школы яхтинга “BigRace”</a>
-				</li>
-			</ol>
-			<div>
-				<article>
-					<header>
-						<time datetime="2021-01-30">30 января 2021</time>
-						<h1>Открытие школы яхтинга “BigRace” в Калининграде</h1>
-						<dl>
-							<div>
-								<dt>Автор статьи:</dt>
-								<dd>Константин Жуков</dd>
+			<div class="container">
+				<ol class="breadcrumbs">
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Главная</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Новости</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Открытие школы яхтинга “BigRace”</a>
+					</li>
+				</ol>
+				<article class="news-article">
+					<header class="news-article__header">
+						<time class="news-article__creation-time" datetime="2021-01-30">30 января 2021</time>
+						<h1 class="news-article__title">Открытие школы яхтинга “BigRace” в Калининграде</h1>
+						<dl class="news-article__creators">
+							<div class="news-article__creator">
+								<dt class="news-article__author">Автор статьи:</dt>
+								<dd class="news-article__author-name">Константин Жуков</dd>
 							</div>
-							<div>
-								<dt>Фотограф:</dt>
-								<dd>Леонид Яровой</dd>
+							<div class="news-article__creator">
+								<dt class="news-article__photographer">Фотограф:</dt>
+								<dd class="news-article__photographer-name">Леонид Яровой</dd>
 							</div>
 						</dl>
-						<p>
+						<p class="news-article__text-intro">
 							Профессиональное сообщество яхтсменов празднует открытие крупнейшей
 							школы яхтинга в Калининграде.
 						</p>
-						<p>
+						<p class="news-article__text-intro">
 							Кто в ней преподает, чему там можно научиться и на кого она рассчитана?
 							Обо всем этом нам рассказал Михаил Чернов, известный спортсмен и
 							владелец компании BigRace.
 						</p>
-						<picture>
+						<picture class="news-article__image-wrapper">
 							<source
 								type="image/webp"
 								media="(min-width:1366px)"
@@ -240,13 +240,14 @@
 								srcset="../../images/article-photo1-desktop@1x.jpg 1x, ../../images/article-photo1-desktop@2x.jpg 2x"
 							/>
 							<img
+								class="news-article__image"
 								src="../../images/article-photo1-desktop@1x.jpg"
 								alt="Двое мужчин на парусной лодке"
 							/>
 						</picture>
 					</header>
-					<div>
-						<p>
+					<div class="news-article__text-content">
+						<p class="news-article__text">
 							Надо ли напоминать, что Михаил – лауреат премии «Яхтсмен века»,
 							победитель открытого чемпионата Испании по океанским гонкам, держатель
 							рекорда пересечения Атлантики «в четыре руки» на яхте Class 20. Исходя
@@ -256,58 +257,58 @@
 							он сам, а также лучшие спортсмены России и других стран: Испании,
 							Франции, Черногории и др.
 						</p>
-						<aside>
-							<strong>Похожие статьи</strong>
-							<ul>
-								<li>
-									<a href="#">Премия “Яхстмен года 2021”</a>
+						<aside class="news-article__similar-article-list similar-article-list">
+							<strong class="similar-article-list__title">Похожие статьи</strong>
+							<ul class="similar-article-list__items-wrapper">
+								<li class="similar-article-list__item">
+									<a class="similar-article-list__link" href="#">Премия “Яхстмен года 2021”</a>
 								</li>
-								<li>
-									<a href="#">Лучшие школы яхтинга</a>
+								<li class="similar-article-list__item">
+									<a class="similar-article-list__link" href="#">Лучшие школы яхтинга</a>
 								</li>
 							</ul>
 						</aside>
-						<div>
-							<p>Михаил поставил цель создать не просто школу, а что-то большее:</p>
-							<q
+						<div class="news-article__qa-box">
+							<p class="news-article__question-text--style--normal">Михаил поставил цель создать не просто школу, а что-то большее:</p>
+							<q class="news-article__quoted-text--style--bold"
 								>«Я хотел, чтобы каждый ученик школы чувствовал себя частью большой
 								и сильной команды. Это не просто слова, мы проделали огромную
 								работу, чтобы это стало возможным: проводим специальные мероприятия,
 								тренинги, собрания и многое другое.»</q
 							>
 						</div>
-						<div>
-							<em
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic"
 								>– Михаил, расскажите, чем ваша школа отличается от других школ
 								яхтинга в России?</em
 							>
-							<q>
+							<q class="news-article__quoted-text--style--normal">
 								– Во-первых, это крупнейшая школа в Калининграде и одна из самых
 								крупных в России. Школа оборудована самым современным и
 								разнообразным оборудованием. А еще, у нас будут преподавать не
 								только самые опытные яхтсмены России, но и спортсмены из других
 								стран.
-								<span
+								<span class="text--style--marked"
 									>Школа рассчитана не только на новичков, опытные яхтсмены тоже
 									найдут здесь для себя много полезного</span
 								>, смогут повысить квалификацию.
 							</q>
 						</div>
-						<div>
-							<em>– Как пришла идея открыть свою школу?</em>
-							<q>
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic">– Как пришла идея открыть свою школу?</em>
+							<q class="news-article__quoted-text--style--normal">
 								– Ко мне обращались любители парусного спорта, интересовались, где
 								можно продолжить обучение, тренироваться, найти единомышленников. Я
 								мог посоветовать лишь пару школ, и то в Сочи или Москве, в нашем
 								городе такой не было. Мы объединились с Николаем Петровым,
 								победителем
-								<strong>Sochi Race Week 2019</strong>, и создали свою школу, которая
+								<strong class="text--style--bold">Sochi Race Week 2019</strong>, и создали свою школу, которая
 								отвечает всем потребностям новичков и профессионалов.
 							</q>
 						</div>
 					</div>
-					<figure>
-						<picture>
+					<figure class="news-article__lead-image lead-image">
+						<picture class="lead-image__picture">
 							<source
 								type="image/webp"
 								media="(min-width:1366px)"
@@ -319,16 +320,17 @@
 								srcset="../../images/article-photo2-desktop@1x.jpg 1x, ../../images/article-photo2-desktop@2x.jpg 2x"
 							/>
 							<img
+								class="lead-image__image"
 								src="../../images/article-photo2-desktop@1x.jpg"
 								alt="Михаил Чернов и Николай Петров на яхте"
 							/>
 						</picture>
-						<figcaption>Михаил Чернов и Николай Петров</figcaption>
+						<figcaption class="lead-image__description">Михаил Чернов и Николай Петров</figcaption>
 					</figure>
-					<div>
-						<div>
-							<em>– Расскажите, пожалуйста, подробнее о преподавателях</em>
-							<q>
+					<div class="news-article__text-content">
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic">– Расскажите, пожалуйста, подробнее о преподавателях</em>
+							<q class="news-article__quoted-text--style--normal">
 								– Одним из преподавателей буду я. В основном, я буду проводить
 								отдельные мастер-классы для опытных моряков, но иногда буду
 								проводить занятия и у начальных групп. Ведущим преподавателем
@@ -338,9 +340,9 @@
 								можно чаще приглашать и других яхтсменов.
 							</q>
 						</div>
-						<div>
-							<em>– Планируете ли вы какие-либо регаты уже в этом году?</em>
-							<q>
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic">– Планируете ли вы какие-либо регаты уже в этом году?</em>
+							<q class="news-article__quoted-text--style--normal">
 								– Да, конечно! По вторникам проводим традиционный общий
 								мастер-класс, в среду гонку среди любителей, четверги посвящаем
 								матч-рейсу. В пятницу даем передышку, а в субботу ждем начинающих
@@ -351,20 +353,20 @@
 							</q>
 						</div>
 					</div>
-					<figure>
-						<blockquote>
+					<figure class="news-article__quote-box quote-box">
+						<blockquote class="quote-box__quote">
 							Ставить себе цели, двигаться к ним шаг за шагом, стремиться к знаниям.
 							Самое важное – постоянно набираться опыта и знаний. И обязательно верить
 							в себя!
 						</blockquote>
-						<figcaption>
-							совет всем любителям яхтинга от <cite>Коллина Трейси</cite>
+						<figcaption class="quote-box__quote-source">
+							совет всем любителям яхтинга от <cite class="quote-box__quote-source-main">Коллина Трейси</cite>
 						</figcaption>
 					</figure>
-					<div>
-						<div>
-							<em>– Есть ли у вас в спорте пример для подражания?</em>
-							<q>
+					<div class="news-article__text-content">
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic">– Есть ли у вас в спорте пример для подражания?</em>
+							<q class="news-article__quoted-text--style--normal">
 								– Мне очень нравятся истории простых людей, которые смогли добиться
 								успеха и признания. Особенно тех, кто не был рожден в спортивной или
 								богатой семье, не имел возможности тренироваться на высоком уровне в
@@ -374,70 +376,82 @@
 								жизнь. Это мой девиз, который теперь и я передаю своим ученикам.
 							</q>
 						</div>
-						<aside>
-							<ul>
-								<li>
-									<a href="#">Коллин Трейси – легенда яхтинга</a>
+						<aside class="news-article__similar-article-list similar-article-list">
+							<ul class="similar-article-list__items-wrapper">
+								<li class="similar-article-list__item">
+									<a class="similar-article-list__link" href="#">Коллин Трейси – легенда яхтинга</a>
 								</li>
 							</ul>
 						</aside>
-						<div>
-							<em>– Расскажите о яхтах вашей школы</em>
-							<q>– В нашем флоте более 40 современных моделей яхт, таких как:</q>
-							<ul>
-								<li>Bavaria 47</li>
-								<li>Bavaria 50</li>
-								<li>Bavaria 46</li>
-								<li>Bavaria 42</li>
-								<li>Bavaria 40</li>
-								<li>Jeanneau SO 35</li>
-								<li>Jeanneau SO 36</li>
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic">– Расскажите о яхтах вашей школы</em>
+							<q class="news-article__quoted-text--style--normal">– В нашем флоте более 40 современных моделей яхт, таких как:</q>
+							<ul class="news-article__yacht-list yacht-list">
+								<li class="yacht-list__item">Bavaria 47</li>
+								<li class="yacht-list__item">Bavaria 50</li>
+								<li class="yacht-list__item">Bavaria 46</li>
+								<li class="yacht-list__item">Bavaria 42</li>
+								<li class="yacht-list__item">Bavaria 40</li>
+								<li class="yacht-list__item">Jeanneau SO 35</li>
+								<li class="yacht-list__item">Jeanneau SO 36</li>
 							</ul>
 						</div>
-						<div>
-							<em
+						<div class="news-article__qa-box">
+							<em class="news-article__question-text--style--italic"
 								>– Видно, что вы отлично подготовились! Желаем успеха и дальнейшего
 								развития вашей школе!</em
 							>
-							<q>
+							<q class="news-article__quoted-text--style--normal">
 								– Спасибо! Приходите к нам на обучение и мероприятия. Будем всех вас
 								очень ждать!
 							</q>
 						</div>
 					</div>
-					<footer>
-						<ul>
-							<li>
-								<a href="#">Обучение</a>
+					<footer class="news-article__footer">
+						<ul class="news-article__tag-list tag-list">
+							<li class="tag-list__item">
+								<a class="tag-list__link" href="#">Обучение</a>
 							</li>
-							<li>
-								<a href="#">Калининград</a>
+							<li class="tag-list__item">
+								<a class="tag-list__link" href="#">Калининград</a>
 							</li>
-							<li>
-								<a href="#">Интервью</a>
+							<li class="tag-list__item">
+								<a class="tag-list__link" href="#">Интервью</a>
 							</li>
 						</ul>
-						<dl>
-							<dt>Поделиться статьей:</dt>
-							<dd>
-								<ul>
-									<li>
-										<a href="#"
-											><span class="visually-hidden"
+						<dl class="news-article__article-share article-share">
+							<dt class="article-share__text">Поделиться статьей:</dt>
+							<dd class="article-share__social-link-list-wrapper">
+								<ul class="article-share__social-link-list">
+									<li class="article-share__social-link-list-item">
+										<a class="article-share__social-link-list-link" href="#"
+											>
+											<svg class="article-share__facebook-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#facebook-icon"></use>
+											</svg>
+											<span class="visually-hidden"
 												>Наша страничка в Facebook</span
 											></a
 										>
 									</li>
-									<li>
-										<a href="#"
-											><span class="visually-hidden"
+									<li class="article-share__social-link-list-item">
+										<a class="article-share__social-link-list-link" href="#"
+											>
+											<svg class="article-share__twitter-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#twitter-icon"></use>
+											</svg>
+											<span class="visually-hidden"
 												>Наша страничка в Twitter</span
 											></a
 										>
 									</li>
-									<li>
-										<a href="#"
-											><span class="visually-hidden"
+									<li class="article-share__social-link-list-item">
+										<a class="article-share__social-link-list-link" href="#"
+											>
+											<svg class="article-share__instagram-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#instagram-icon"></use>
+											</svg>
+											<span class="visually-hidden"
 												>Наша страничка в instagram</span
 											></a
 										>
@@ -447,8 +461,9 @@
 						</dl>
 					</footer>
 				</article>
-				<aside>
-					<h2>Другие новости</h2>
+				/////////
+				<aside class="other-news">
+					<h2 class="section-title section-title--position--left section-title--underline--19rem section-title--underline--left">Другие новости</h2>
 					<ul>
 						<li>
 							<article>
