@@ -202,7 +202,7 @@
 						<a class="breadcrumbs__link" href="#">Новости</a>
 					</li>
 					<li class="breadcrumbs__item">
-						<a class="breadcrumbs__link" href="#">Открытие школы яхтинга “BigRace”</a>
+						<a class="breadcrumbs__link breadcrumbs__link--status--active" href="#">Открытие школы яхтинга “BigRace”</a>
 					</li>
 				</ol>
 				<article class="news-article">
@@ -461,247 +461,256 @@
 						</dl>
 					</footer>
 				</article>
-				/////////
 				<aside class="other-news">
 					<h2 class="section-title section-title--position--left section-title--underline--19rem section-title--underline--left">Другие новости</h2>
-					<ul>
-						<li>
-							<article>
-								<header>
-									<figure>
-										<picture>
+					<div class="other-news-slider">
+						<ul class="other-news-slider__wrapper">
+							<li class="other-news-slider__slide">
+								<article class="other-news-card">
+									<header class="other-news-card__header">
+										<figure class="other-news-card__card-image">
+											<picture class="other-news-card__image-wrapper">
+												<source
+													type="image/webp"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture1-desktop@1x.webp 1x, ../../images/other-news-picture1-desktop@2x.webp 2x"
+												/>
+												<source
+													type="image/jpg"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture1-desktop@1x.jpg 1x, ../../images/other-news-picture1-desktop@2x.jpg 2x"
+												/>
+												<img
+													class="other-news-card__image"
+													src="../../images/other-news-picture1-desktop@1x.jpg"
+													alt="Парусное судно на закате"
+												/>
+											</picture>
+											<figcaption class="other-news-card__image-description">
+												Участник выставки – яхта Golsling 3.15
+											</figcaption>
+										</figure>
+									</header>
+									<h3 class="other-news-card__title">Выставка Sochi Boat Show</h3>
+									<p class="other-news-card__text">
+										Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
+										2020 года в нашем яхт-клубе. В программе будет демонстрация и
+										тест-драйвы водомоторной ...
+									</p>
+									<footer class="other-news-card__footer">
+										<picture class="other-news-card__author-image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture1-desktop@1x.webp 1x, ../../images/other-news-picture1-desktop@2x.webp 2x"
+												srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
 											/>
 											<source
 												type="image/jpg"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture1-desktop@1x.jpg 1x, ../../images/other-news-picture1-desktop@2x.jpg 2x"
+												srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
 											/>
 											<img
-												src="../../images/other-news-picture1-desktop@1x.jpg"
-												alt="Парусное судно на закате"
+												class="other-news-card__author-image"
+												src="../../images/author-photo2-desktop@1x.jpg"
+												alt="Денис Иванов"
 											/>
 										</picture>
-										<figcaption>
-											Участник выставки – яхта Golsling 3.15
-										</figcaption>
-									</figure>
-								</header>
-								<h3>Выставка Sochi Boat Show</h3>
-								<p>
-									Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
-									2020 года в нашем яхт-клубе. В программе будет демонстрация и
-									тест-драйвы водомоторной ...
-								</p>
-								<footer>
-									<picture>
-										<source
-											type="image/webp"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
-										/>
-										<source
-											type="image/jpg"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
-										/>
-										<img
-											src="../../images/author-photo2-desktop@1x.jpg"
-											alt="Денис Иванов"
-										/>
-									</picture>
-									<a href="#">Денис Иванов</a>
-									<time datetime="2020-06-15">15.06.2020</time>
-									<a href="#">
-										<svg focusable="false" aria-hidden="true">
-											<use xlink:href="#share-icon"></use>
-										</svg>
-										<span class="visually-hidden">Поделиться</span>
-									</a>
-								</footer>
-							</article>
-						</li>
-						<li>
-							<article>
-								<header>
-									<figure>
-										<picture>
+										<a class="other-news-card__author" href="#">Денис Иванов</a>
+										<time class="other-news-card__creation-time" datetime="2020-06-15">15.06.2020</time>
+										<a class="other-news-card__share-link" href="#">
+											<svg class="other-news-card__share-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#share-icon"></use>
+											</svg>
+											<span class="visually-hidden">Поделиться</span>
+										</a>
+									</footer>
+								</article>
+							</li>
+							<li class="other-news-slider__slide">
+								<article class="other-news-card">
+									<header class="other-news-card__header">
+										<figure class="other-news-card__card-image">
+											<picture class="other-news-card__image-wrapper">
+												<source
+													type="image/webp"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture2-desktop@1x.webp 1x, ../../images/other-news-picture2-desktop@2x.webp 2x"
+												/>
+												<source
+													type="image/jpg"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture2-desktop@1x.jpg 1x, ../../images/other-news-picture2-desktop@2x.jpg 2x"
+												/>
+												<img
+													class="other-news-card__image"
+													src="../../images/other-news-picture2-desktop@1x.jpg"
+													alt="Парусное судно на закате"
+												/>
+											</picture>
+											<figcaption class="other-news-card__image-description">
+												Участник выставки – яхта Golsling 3.15
+											</figcaption>
+										</figure>
+									</header>
+									<h3 class="other-news-card__title">Выставка Sochi Boat Show</h3>
+									<p class="other-news-card__text">
+										Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
+										2020 года в нашем яхт-клубе. В программе будет демонстрация и
+										тест-драйвы водомоторной ...
+									</p>
+									<footer class="other-news-card__footer">
+										<picture class="other-news-card__author-image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture2-desktop@1x.webp 1x, ../../images/other-news-picture2-desktop@2x.webp 2x"
+												srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
 											/>
 											<source
 												type="image/jpg"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture2-desktop@1x.jpg 1x, ../../images/other-news-picture2-desktop@2x.jpg 2x"
+												srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
 											/>
 											<img
-												src="../../images/other-news-picture2-desktop@1x.jpg"
-												alt="Парусное судно на закате"
+												class="other-news-card__author-image"
+												src="../../images/author-photo2-desktop@1x.jpg"
+												alt="Денис Иванов"
 											/>
 										</picture>
-										<figcaption>
-											Участник выставки – яхта Golsling 3.15
-										</figcaption>
-									</figure>
-								</header>
-								<h3>Выставка Sochi Boat Show</h3>
-								<p>
-									Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
-									2020 года в нашем яхт-клубе. В программе будет демонстрация и
-									тест-драйвы водомоторной ...
-								</p>
-								<footer>
-									<picture>
-										<source
-											type="image/webp"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
-										/>
-										<source
-											type="image/jpg"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
-										/>
-										<img
-											src="../../images/author-photo2-desktop@1x.jpg"
-											alt="Денис Иванов"
-										/>
-									</picture>
-									<a href="#">Денис Иванов</a>
-									<time datetime="2020-06-15">15.06.2020</time>
-									<a href="#">
-										<svg focusable="false" aria-hidden="true">
-											<use xlink:href="#share-icon"></use>
-										</svg>
-										<span class="visually-hidden">Поделиться</span>
-									</a>
-								</footer>
-							</article>
-						</li>
-						<li>
-							<article>
-								<header>
-									<figure>
-										<picture>
+										<a class="other-news-card__author" href="#">Денис Иванов</a>
+										<time class="other-news-card__creation-time" datetime="2020-06-15">15.06.2020</time>
+										<a class="other-news-card__share-link" href="#">
+											<svg class="other-news-card__share-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#share-icon"></use>
+											</svg>
+											<span class="visually-hidden">Поделиться</span>
+										</a>
+									</footer>
+								</article>
+							</li>
+							<li class="other-news-slider__slide">
+								<article class="other-news-card">
+									<header class="other-news-card__header">
+										<figure class="other-news-card__card-image">
+											<picture class="other-news-card__image-wrapper">
+												<source
+													type="image/webp"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture3-desktop@1x.webp 1x, ../../images/other-news-picture3-desktop@2x.webp 2x"
+												/>
+												<source
+													type="image/jpg"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture3-desktop@1x.jpg 1x, ../../images/other-news-picture3-desktop@2x.jpg 2x"
+												/>
+												<img
+													class="other-news-card__image"
+													src="../../images/other-news-picture3-desktop@1x.jpg"
+													alt="Парусное судно на закате"
+												/>
+											</picture>
+											<figcaption class="other-news-card__image-description">
+												Участник выставки – яхта Golsling 3.15
+											</figcaption>
+										</figure>
+									</header>
+									<h3 class="other-news-card__title">Выставка Sochi Boat Show</h3>
+									<p class="other-news-card__text">
+										Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
+										2020 года в нашем яхт-клубе. В программе будет демонстрация и
+										тест-драйвы водомоторной ...
+									</p>
+									<footer class="other-news-card__footer">
+										<picture class="other-news-card__author-image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture3-desktop@1x.webp 1x, ../../images/other-news-picture3-desktop@2x.webp 2x"
+												srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
 											/>
 											<source
 												type="image/jpg"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture3-desktop@1x.jpg 1x, ../../images/other-news-picture3-desktop@2x.jpg 2x"
+												srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
 											/>
 											<img
-												src="../../images/other-news-picture3-desktop@1x.jpg"
-												alt="Парусное судно на закате"
+												class="other-news-card__author-image"
+												src="../../images/author-photo2-desktop@1x.jpg"
+												alt="Денис Иванов"
 											/>
 										</picture>
-										<figcaption>
-											Участник выставки – яхта Golsling 3.15
-										</figcaption>
-									</figure>
-								</header>
-								<h3>Выставка Sochi Boat Show</h3>
-								<p>
-									Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
-									2020 года в нашем яхт-клубе. В программе будет демонстрация и
-									тест-драйвы водомоторной ...
-								</p>
-								<footer>
-									<picture>
-										<source
-											type="image/webp"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
-										/>
-										<source
-											type="image/jpg"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
-										/>
-										<img
-											src="../../images/author-photo2-desktop@1x.jpg"
-											alt="Денис Иванов"
-										/>
-									</picture>
-									<a href="#">Денис Иванов</a>
-									<time datetime="2020-06-15">15.06.2020</time>
-									<a href="#">
-										<svg focusable="false" aria-hidden="true">
-											<use xlink:href="#share-icon"></use>
-										</svg>
-										<span class="visually-hidden">Поделиться</span>
-									</a>
-								</footer>
-							</article>
-						</li>
-						<li>
-							<article>
-								<header>
-									<figure>
-										<picture>
+										<a class="other-news-card__author" href="#">Денис Иванов</a>
+										<time class="other-news-card__creation-time" datetime="2020-06-15">15.06.2020</time>
+										<a class="other-news-card__share-link" href="#">
+											<svg class="other-news-card__share-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#share-icon"></use>
+											</svg>
+											<span class="visually-hidden">Поделиться</span>
+										</a>
+									</footer>
+								</article>
+							</li>
+							<li class="other-news-slider__slide">
+								<article class="other-news-card">
+									<header class="other-news-card__header">
+										<figure class="other-news-card__card-image">
+											<picture class="other-news-card__image-wrapper">
+												<source
+													type="image/webp"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture4-desktop@1x.webp 1x, ../../images/other-news-picture4-desktop@2x.webp 2x"
+												/>
+												<source
+													type="image/jpg"
+													media="(min-width:1366px)"
+													srcset="../../images/other-news-picture4-desktop@1x.jpg 1x, ../../images/other-news-picture4-desktop@2x.jpg 2x"
+												/>
+												<img
+													class="other-news-card__image"
+													src="../../images/other-news-picture4-desktop@1x.jpg"
+													alt="Парусное судно на закате"
+												/>
+											</picture>
+											<figcaption class="other-news-card__image-description">
+												Участник выставки – яхта Golsling 3.15
+											</figcaption>
+										</figure>
+									</header>
+									<h3 class="other-news-card__title">Выставка Sochi Boat Show</h3>
+									<p class="other-news-card__text">
+										Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
+										2020 года в нашем яхт-клубе. В программе будет демонстрация и
+										тест-драйвы водомоторной ...
+									</p>
+									<footer class="other-news-card__footer">
+										<picture class="other-news-card__author-image-wrapper">
 											<source
 												type="image/webp"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture4-desktop@1x.webp 1x, ../../images/other-news-picture4-desktop@2x.webp 2x"
+												srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
 											/>
 											<source
 												type="image/jpg"
 												media="(min-width:1366px)"
-												srcset="../../images/other-news-picture4-desktop@1x.jpg 1x, ../../images/other-news-picture4-desktop@2x.jpg 2x"
+												srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
 											/>
 											<img
-												src="../../images/other-news-picture4-desktop@1x.jpg"
-												alt="Парусное судно на закате"
+												class="other-news-card__author-image"
+												src="../../images/author-photo2-desktop@1x.jpg"
+												alt="Денис Иванов"
 											/>
 										</picture>
-										<figcaption>
-											Участник выставки – яхта Golsling 3.15
-										</figcaption>
-									</figure>
-								</header>
-								<h3>Выставка Sochi Boat Show</h3>
-								<p>
-									Выставка катеров и яхт Sochi Boat Show состоится с 19 по 29 июля
-									2020 года в нашем яхт-клубе. В программе будет демонстрация и
-									тест-драйвы водомоторной ...
-								</p>
-								<footer>
-									<picture>
-										<source
-											type="image/webp"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.webp 1x, ../../images/author-photo2-desktop@2x.webp 2x"
-										/>
-										<source
-											type="image/jpg"
-											media="(min-width:1366px)"
-											srcset="../../images/author-photo2-desktop@1x.jpg 1x, ../../images/author-photo2-desktop@2x.jpg 2x"
-										/>
-										<img
-											src="../../images/author-photo2-desktop@1x.jpg"
-											alt="Денис Иванов"
-										/>
-									</picture>
-									<a href="#">Денис Иванов</a>
-									<time datetime="2020-06-15">15.06.2020</time>
-									<a href="#">
-										<svg focusable="false" aria-hidden="true">
-											<use xlink:href="#share-icon"></use>
-										</svg>
-										<span class="visually-hidden">Поделиться</span>
-									</a>
-								</footer>
-							</article>
-						</li>
-					</ul>
+										<a class="other-news-card__author" href="#">Денис Иванов</a>
+										<time class="other-news-card__creation-time" datetime="2020-06-15">15.06.2020</time>
+										<a class="other-news-card__share-link" href="#">
+											<svg class="other-news-card__share-icon" focusable="false" aria-hidden="true">
+												<use xlink:href="#share-icon"></use>
+											</svg>
+											<span class="visually-hidden">Поделиться</span>
+										</a>
+									</footer>
+								</article>
+							</li>
+						</ul>
+					</div>
 				</aside>
 			</div>
 		</main>

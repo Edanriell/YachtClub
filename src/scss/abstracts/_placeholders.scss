@@ -1,13 +1,8 @@
-%black-filled-circle {
+%darkTurquoise-dot {
     content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 23rem;
-    height: 23rem;
-    box-shadow: 0 4px 4px var(--clr-neutral-600);
-    background-color: var(--clr-neutral-500);
+    width: 0.8rem;
+    height: 0.8rem;
     border-radius: 50%;
-    z-index: -1;
+    background-color: var(--clr-accent-darkTurquoise);
+    margin-right: 1rem;
 }

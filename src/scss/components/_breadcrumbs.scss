@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+.breadcrumbs {
+    margin-top: 2rem;
+    @include flex(center, flex-start, row);
+}
+
+.breadcrumbs__item {
+    @include flex(center, flex-start, row);
+    margin-right: 1rem;
+
+    &::before {
+        @extend %darkTurquoise-dot;
+    }
+
+    &:first-child::before {
+        all: unset;
+    }
+}
+
+.breadcrumbs__link {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-14);
+    line-height: 1.8rem;
+    color: var(--clr-primary-nileBlue);
+}
+
+.breadcrumbs__link--status--active {
+    color: var(--clr-primary-nileBlueHalfTransparent2);
+}
