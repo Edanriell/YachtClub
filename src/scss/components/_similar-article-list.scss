@@ -13,6 +13,12 @@
     }
 }
 
+.similar-article-list--type--no-title {
+    &::before {
+        all: unset;
+    }
+}
+
 .similar-article-list__title {
     display: block;
     font-family: var(--ff-normal-600);
@@ -41,8 +47,8 @@
     border-bottom: 0.1rem solid var(--clr-neutral-platinum);
     max-width: 20rem;
 
-    &:first-child {
-        border-bottom: none;
+    &:nth-child(2) {
+        border-top: none;
     }
 }
 

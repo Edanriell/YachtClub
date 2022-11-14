@@ -1,11 +1,36 @@
 .quote-box {
+    position: relative;
+    background-color: var(--clr-neutral-cultured);
+    padding: 6rem 13rem 6rem 13rem;
+    max-width: 103rem;
+    display: block;
+    margin: 0 auto;
 }
 
 .quote-box__quote {
+    font-family: var(--ff-italic-500);
+    font-size: var(--fs-1366-24);
+    line-height: 3.4rem;
+    color: var(--clr-primary-darkBlueGrey);
 }
 
 .quote-box__quote-source {
+    font-family: var(--ff-normal-400);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-primary-darkBlueGrey);
+    padding-top: 1.25em;
 }
 
 .quote-box__quote-source-main {
+    font-style: normal;
+}
+
+.quote-box__quote-icon {
+    width: 5.6rem;
+    height: 5.2rem;
+    fill: none;
+    position: absolute;
+    top: 4rem;
+    left: -2.8rem;
 }

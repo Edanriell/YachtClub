@@ -1,11 +1,23 @@
 .lead-image {
+    position: relative;
 }
 
 .lead-image__picture {
+    width: 117rem;
+    height: 53rem;
 }
 
 .lead-image__image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: middle;
 }
 
 .lead-image__description {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-14);
+    line-height: 1.9rem;
+    color: var(--clr-primary-darkBlueGreyHalfTransparent);
+    padding-top: 0.7142857142857143em;
 }

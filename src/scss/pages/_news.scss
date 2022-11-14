@@ -103,10 +103,24 @@
     padding-top: 6rem;
 }
 
+.news-article__text-content--padding--5rem {
+    padding-top: 5rem;
+}
+
 .news-article__text-content--layout-type--grid-large-small-column {
     display: grid;
     grid-template-columns: 70rem 1fr;
     column-gap: 10rem;
+}
+
+.news-article__text-content--layout-type--grid-two-even-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+
+    .news-article__qa-box {
+        grid-column: initial;
+    }
 }
 
 .news-article__text {
@@ -143,6 +157,10 @@
 
 .news-article__qa-box--padding-top--3-5rem {
     padding-top: 3.5rem;
+}
+
+.news-article__qa-box--padding-top--2rem {
+    padding-top: 2rem;
 }
 
 .news-article__qa-box--padding-top--1-5rem {
@@ -185,6 +203,11 @@
     line-height: 2.2rem;
     color: var(--clr-primary-darkBlueGrey);
     quotes: none;
+    display: block;
+}
+
+.news-article__question-text--max-width--45rem {
+    max-width: 45rem;
 }
 
 .news-article__lead-image {
@@ -192,9 +215,11 @@
 }
 
 .news-article__quote-box {
+    margin-top: 5rem;
 }
 
 .news-article__yacht-list {
+    position: relative;
 }
 
 .news-article__footer {
