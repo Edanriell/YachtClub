@@ -144,7 +144,12 @@
 }
 
 .text--style--marked {
+    background-color: var(--clr-accent-lightCyan);
 }
 
 .text--style--bold {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-16);
+    line-height: 2.2rem;
+    color: var(--clr-accent-viridianGreen);
 }
