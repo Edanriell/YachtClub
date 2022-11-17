@@ -2,11 +2,13 @@
 
 .footer {
     position: relative;
+    margin-top: 12rem;
+    border-top: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent3);
 }
 
 .footer__wrapper {
-    padding-top: 12rem;
     padding-bottom: 6.4rem;
+    padding-top: 6rem;
     @include flex(flex-start, flex-start, row);
 }
 

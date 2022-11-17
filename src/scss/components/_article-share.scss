@@ -1,26 +1,54 @@
+@use "../abstracts/mixins" as *;
+
 .article-share {
+    @include flex(center, flex-start, row);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent3);
+    column-gap: 1.5rem;
 }
 
 .article-share__text {
+    font-family: var(--ff-normal-600);
+    font-size: var(--fs-1366-12);
+    line-height: 1.7rem;
+    color: var(--clr-primary-darkBlueGrey);
 }
 
 .article-share__social-link-list-wrapper {
+    position: relative;
 }
 
 .article-share__social-link-list {
+    @include flex(flex-start, flex-start, row);
+    column-gap: 1.5rem;
 }
 
 .article-share__social-link-list-item {
+    position: relative;
 }
 
 .article-share__social-link-list-link {
+    display: block;
 }
 
 .article-share__facebook-icon {
+    fill: none;
+    width: 3.4rem;
+    height: 3.4rem;
+    vertical-align: middle;
 }
 
 .article-share__twitter-icon {
+    fill: none;
+    width: 3.4rem;
+    height: 3.4rem;
+    vertical-align: middle;
 }
 
 .article-share__instagram-icon {
+    fill: none;
+    width: 3.4rem;
+    height: 3.4rem;
+    vertical-align: middle;
 }

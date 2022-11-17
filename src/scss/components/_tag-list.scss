@@ -1,8 +1,25 @@
+@use "../abstracts/mixins" as *;
+
 .tag-list {
+    @include flex(flex-start, flex-start, row);
+    font-size: var(--fs-1366-12);
+    column-gap: 1.25em;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent3);
+    border-bottom: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent3);
 }
 
 .tag-list__item {
+    font-size: inherit;
 }
 
 .tag-list__link {
+    font-family: var(--ff-normal-600);
+    font-size: inherit;
+    line-height: 1.7rem;
+    color: var(--clr-primary-darkBlueGrey);
+    border: 0.1rem solid var(--clr-accent-darkTurquoise);
+    padding: 1rem 1.2rem;
+    display: block;
 }

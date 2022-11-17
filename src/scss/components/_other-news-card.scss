@@ -1,16 +1,25 @@
 .other-news-card {
+    position: relative;
 }
 
 .other-news-card__header {
+    padding-bottom: 1.5rem;
 }
 
 .other-news-card__card-image {
+    position: relative;
 }
 
 .other-news-card__image-wrapper {
+    width: 27rem;
+    height: 13rem;
 }
 
 .other-news-card__image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: middle;
 }
 
 .other-news-card__image-description {

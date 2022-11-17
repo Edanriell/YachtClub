@@ -1,8 +1,13 @@
+@use "../abstracts/mixins" as *;
+
 .other-news-slider {
+    padding-top: 4rem;
 }
 
 .other-news-slider__wrapper {
+    @include flex(flex-start, flex-start, row);
 }
 
 .other-news-slider__slide {
+    position: relative;
 }
