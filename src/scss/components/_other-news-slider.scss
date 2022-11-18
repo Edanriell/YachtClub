@@ -6,6 +6,7 @@
 
 .other-news-slider__wrapper {
     @include flex(flex-start, flex-start, row);
+    column-gap: 3rem;
 }
 
 .other-news-slider__slide {
