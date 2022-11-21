@@ -1,14 +1,45 @@
 .main-navigation {
-    position: relative;
     flex-wrap: wrap;
 }
 
 .main-navigation__navigation-element {
-    display: block;
+	// ** These styles are needed for Link direction aware hover effect **
+	display: grid;
+	grid-auto-flow: column;
+	// ** These styles are needed for Link direction aware hover effect **
 }
 
 .main-navigation__navigation-link {
     padding: 1.0714285em;
+	// ** These styles are needed for Link direction aware hover effect **
+	position: relative;
+	opacity: .7;
+	transition: opacity .3s cubic-bezier(.51, .92, .24, 1);
+
+	&::after {
+		--scale: 0;
+		--underlineColor: hsl(177deg, 100%, 39%);
+
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		height: 3px;
+		background: var(--underlineColor);
+		transform: scaleX(var(--scale));
+		transform-origin: var(--x) 50%;
+		transition: transform .3s cubic-bezier(.51, .92, .24, 1);
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:hover::after {
+		--scale: 1;
+	}
+	// ** These styles are needed for Link direction aware hover effect **
 }
 
 .main-navigation__user-navigation {
