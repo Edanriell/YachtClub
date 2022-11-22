@@ -1,12 +1,23 @@
 import "../scss/style.scss";
+import "swiper/css";
 
-import { LinkDirectionAwareHoverEffect } from "./components/linkDirectionAwareHoverEffect";
+import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
+import { HeroSlider } from "./components/HeroSlider";
+import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
+
+Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative]);
 
 window.addEventListener("DOMContentLoaded", () => {
-	const linkDirectionAwareHoverEffect = new LinkDirectionAwareHoverEffect({
-        linksSelector: ".main-navigation__navigation-link",
-        underlineColor: "hsl(177deg, 100%, 39%)"
-    });
+	const mainNavigationLinkDirectionAwareHoverEffect = new LinkDirectionAwareHoverEffect({
+		linksSelector: ".main-navigation__navigation-link",
+		underlineColor: "hsl(177deg, 100%, 39%)"
+	});
 
-	linkDirectionAwareHoverEffect.init();
+	mainNavigationLinkDirectionAwareHoverEffect.init();
+});
+
+window.addEventListener("load", () => {
+	const heroSlider = new Swiper(".hero-slider", HeroSlider);
+
+	heroSlider.init();
 });

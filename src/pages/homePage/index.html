@@ -197,9 +197,66 @@
 			<section class="hero">
 				<div class="hero__wrapper container">
 					<h2 class="hero__hero-title hero-title hero-title--color--nileBlue">Под парусом <br /><span class="hero-title--color--paleGrey">вместе</span></h2>
-					<div class="hero__hero-slider hero-slider">
-						<div class="hero-slider__wrapper">
-							<div class="hero-slider__slide">
+					<div class="hero__hero-slider hero-slider swiper">
+						<div class="hero-slider__wrapper swiper-wrapper">
+							<div class="hero-slider__slide swiper-slide">
+								<picture class="hero-slider__slide-content">
+									<source
+										type="image/webp"
+										media="(min-width:1366px)"
+										srcset=" ../../images/slider-image1-desktop@1x.webp 1x, ../../images/slider-image1-desktop@2x.webp 2x"
+									/>
+									<source
+										type="image/jpg"
+										media="(min-width:1366px)"
+										srcset="../../images/slider-image1-desktop@1x.jpg 1x, ../../images/slider-image1-desktop@2x.jpg 2x"
+									/>
+									<img
+										class="hero-slider__slide-image"
+										src="../../images/slider-image1-desktop@1x.jpg"
+										alt="Парусное судно на закате"
+									/>
+								</picture>
+							</div>
+							<div class="hero-slider__slide swiper-slide">
+								<picture class="hero-slider__slide-content">
+									<source
+										type="image/webp"
+										media="(min-width:1366px)"
+										srcset=" ../../images/slider-image1-desktop@1x.webp 1x, ../../images/slider-image1-desktop@2x.webp 2x"
+									/>
+									<source
+										type="image/jpg"
+										media="(min-width:1366px)"
+										srcset="../../images/slider-image1-desktop@1x.jpg 1x, ../../images/slider-image1-desktop@2x.jpg 2x"
+									/>
+									<img
+										class="hero-slider__slide-image"
+										src="../../images/slider-image1-desktop@1x.jpg"
+										alt="Парусное судно на закате"
+									/>
+								</picture>
+							</div>
+							<div class="hero-slider__slide swiper-slide">
+								<picture class="hero-slider__slide-content">
+									<source
+										type="image/webp"
+										media="(min-width:1366px)"
+										srcset=" ../../images/slider-image1-desktop@1x.webp 1x, ../../images/slider-image1-desktop@2x.webp 2x"
+									/>
+									<source
+										type="image/jpg"
+										media="(min-width:1366px)"
+										srcset="../../images/slider-image1-desktop@1x.jpg 1x, ../../images/slider-image1-desktop@2x.jpg 2x"
+									/>
+									<img
+										class="hero-slider__slide-image"
+										src="../../images/slider-image1-desktop@1x.jpg"
+										alt="Парусное судно на закате"
+									/>
+								</picture>
+							</div>
+							<div class="hero-slider__slide swiper-slide">
 								<picture class="hero-slider__slide-content">
 									<source
 										type="image/webp"
@@ -220,13 +277,13 @@
 							</div>
 						</div>
 						<div class="hero-slider__controls">
-							<button class="hero-slider__button-prev" type="button">
+							<button class="hero-slider__button-next" type="button">
 								<span class="visually-hidden">Следующий слайд</span>
 								<svg class="hero-slider__button-prev-svg" focusable="false" aria-hidden="true">
 									<use xlink:href="#arrow-right"></use>
 								</svg>
 							</button>
-							<button class="hero-slider__button-next" type="button">
+							<button class="hero-slider__button-prev" type="button">
 								<span class="visually-hidden">Предыдущий слайд</span>
 								<svg class="hero-slider__button-next-svg" focusable="false" aria-hidden="true">
 									<use xlink:href="#arrow-left"></use>

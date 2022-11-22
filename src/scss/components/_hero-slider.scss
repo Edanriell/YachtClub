@@ -26,6 +26,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 2;
     @include flex(center, center, row-reverse);
 }
 
