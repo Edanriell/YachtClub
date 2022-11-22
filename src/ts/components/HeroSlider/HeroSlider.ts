@@ -25,5 +25,6 @@ export const HeroSlider: SwiperOptions = {
 		nextEl: ".hero-slider__button-next",
 		prevEl: ".hero-slider__button-prev"
 	},
-	grabCursor: false
+	grabCursor: true,
+	speed: 600
 };

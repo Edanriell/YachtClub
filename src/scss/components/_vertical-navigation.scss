@@ -22,4 +22,11 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--clr-primary-nileBlue);
+    opacity: .7;
+	transition: opacity .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        opacity: 1;
+        transition: opacity .3s cubic-bezier(.51, .92, .24, 1);
+    }
 }

@@ -5,6 +5,7 @@
 }
 
 .hero-slider__wrapper {
+    position: relative;
 }
 
 .hero-slider__slide {
@@ -36,6 +37,17 @@
     height: 7.6rem;
     position: relative;
     cursor: pointer;
+	transition: background .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        background: var(--clr-accent-darkTurquoise);
+        transition: background .3s cubic-bezier(.51, .92, .24, 1);
+
+        svg {
+            color: white;
+            transition: color .3s cubic-bezier(.51, .92, .24, 1);
+        }
+    }
 }
 
 .hero-slider__button-prev-svg {
@@ -46,6 +58,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--clr-primary-nileBlue);
+    transition: color .3s cubic-bezier(.51, .92, .24, 1);
 }
 
 .hero-slider__button-next {
@@ -54,6 +68,17 @@
     height: 7.6rem;
     position: relative;
     cursor: pointer;
+    transition: background .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        background: var(--clr-accent-darkTurquoise);
+        transition: background .3s cubic-bezier(.51, .92, .24, 1);
+        
+        svg {
+            color: white;
+            transition: color .3s cubic-bezier(.51, .92, .24, 1);
+        }
+    }
 }
 
 .hero-slider__button-next-svg {
@@ -64,4 +89,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--clr-primary-nileBlue);
+    transition: color .3s cubic-bezier(.51, .92, .24, 1);
 }
