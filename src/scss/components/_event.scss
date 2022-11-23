@@ -129,6 +129,15 @@
     height: 5.8rem;
     fill: none;
     vertical-align: middle;
+    color: var(--clr-primary-nileBlue);
+    transition: fill .3s cubic-bezier(.51, .92, .24, 1), color .3s cubic-bezier(.51, .92, .24, 1), border .3s cubic-bezier(.51, .92, .24, 1);
+    
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+        border: 1px solid var(--clr-accent-darkTurquoise);
+        border-radius: 50%;
+    }
 }
 
 .event__image-wrapper {

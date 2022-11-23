@@ -4,6 +4,7 @@ import "swiper/css";
 import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
 import { HeroSlider } from "./components/HeroSlider";
 import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
+import { VideoPlayer } from "./components/VideoPlayer";
 
 Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative]);
 
@@ -18,6 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
 	const heroSlider = new Swiper(".hero-slider", HeroSlider);
+	const videoPlayer = new VideoPlayer({
+		triggerSelector: ".video__play-button",
+		posterSelector: ".video__preview-image",
+		playerSelector: ".video__clip"
+	});
 
 	heroSlider.init();
+	videoPlayer.init();
 });

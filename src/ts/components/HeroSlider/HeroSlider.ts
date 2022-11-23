@@ -14,7 +14,7 @@ export const HeroSlider: SwiperOptions = {
 		}
 	},
 	autoplay: {
-		delay: 60000,
+		delay: 10000,
 		disableOnInteraction: false,
 		pauseOnMouseEnter: true
 	},

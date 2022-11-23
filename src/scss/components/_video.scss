@@ -73,6 +73,7 @@
     background-color: var(--clr-neutral-paleGrey);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color .3s cubic-bezier(.51, .92, .24, 1), border-left .3s cubic-bezier(.51, .92, .24, 1);
 
     &::after {
         content: "";
@@ -86,6 +87,14 @@
         border-top: 1.2rem solid transparent;
         border-bottom: 1.2rem solid transparent;
         border-left: 1.6rem solid var(--clr-accent-darkTurquoise);
+    }
+
+    &:hover {
+        background-color: var(--clr-accent-darkTurquoise);
+    }
+
+    &:hover::after {
+        border-left: 1.6rem solid white;
     }
 }
 
