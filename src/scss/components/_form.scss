@@ -75,6 +75,15 @@
 
 .form__field-input {
     all: unset;
+    transition: border .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        border: 0.1rem solid var(--clr-accent-darkTurquoise);
+    }
+
+    &:focus {
+        border: 0.1rem solid var(--clr-accent-darkTurquoise);
+    }
 }
 
 .form__field-input--type--text {
@@ -142,4 +151,13 @@
     line-height: 2.2rem;
     color: var(--clr-neutral-paleGrey);
     cursor: pointer;
+    transition: background-color .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        background-color: var(--clr-hover-darkTurquoiseHover);
+    }
+
+    &:focus {
+        background-color: var(--clr-hover-darkTurquoiseHover);
+    }
 }

@@ -220,6 +220,11 @@
     height: inherit;
     vertical-align: middle;
     fill: inherit;
+    transition: transform .3s cubic-bezier(.51, .92, .24, 1);
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .article__footer-content {

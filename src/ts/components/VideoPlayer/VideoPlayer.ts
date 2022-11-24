@@ -1,8 +1,10 @@
+import gsap from "gsap";
+
 interface IVideoPlayer {
 	trigger: HTMLElement | null;
 	poster: HTMLElement | null;
 	player: HTMLVideoElement | null;
-    init(): void;
+	init(): void;
 }
 
 export class VideoPlayer implements IVideoPlayer {
@@ -29,17 +31,57 @@ export class VideoPlayer implements IVideoPlayer {
 	public init(): void {
 		this.trigger?.addEventListener("click", () => {
 			this.#removePoster();
-			this.#startVideo();
 			this.#removePlayButton();
+			this.#startVideo();
 		});
 	}
 
 	#removePoster(): void {
-		this.poster?.remove();
+		gsap.fromTo(
+			this.poster,
+			{ opacity: 1 },
+			{
+				opacity: 0,
+				duration: 0.3,
+				ease: "power1.out",
+				onComplete: () => {
+					if (
+						this.poster?.parentElement &&
+						this.poster?.parentElement?.nextElementSibling &&
+						this.poster?.parentElement?.nextElementSibling.classList.contains(
+							"video__player-overlay"
+						)
+					) {
+						this.poster?.parentElement?.nextElementSibling.remove();
+						this.poster?.parentElement.remove();
+					} else if (this.poster?.parentElement) {
+						this.poster?.parentElement.remove();
+					} else {
+						this.poster?.remove();
+					}
+				}
+			}
+		);
 	}
 
 	#removePlayButton(): void {
-		this.trigger?.remove();
+		gsap.fromTo(
+			this.trigger,
+			{ opacity: 1, scale: 1 },
+			{
+				opacity: 0,
+				scale: 0,
+				duration: 0.2,
+				ease: "power1.out",
+				onComplete: () => {
+					if (this.trigger?.parentElement) {
+						this.trigger?.parentElement.remove();
+					} else {
+						this.trigger?.remove();
+					}
+				}
+			}
+		);
 	}
 
 	#startVideo(): void {
