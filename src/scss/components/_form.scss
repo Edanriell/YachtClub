@@ -161,3 +161,112 @@
         background-color: var(--clr-hover-darkTurquoiseHover);
     }
 }
+  
+
+/* ***** Colors - Start ***** */
+$black: #111;
+$grey: #2d343c;
+$blue: #3f71ff;
+$white: #000;
+/* ***** Colors - End ***** */
+
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  %line-dimension {
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: $white;
+  }
+  /* ***** Global Styles - End ***** */
+  
+  /* ***** Specific Styles - Start ***** */
+  .container2 {
+    position: relative;
+  }
+  .checkbox {
+    @extend %center;
+    width: 75px;
+    height: 75px;
+    border: 2px solid $grey;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      border: 2px solid $blue;
+    }
+    .fill-color {
+      position: absolute;
+      width: 73px;
+      height: 73px;
+      border-radius: 16px;
+      background-color: $blue;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    .tick-mark-1 {
+      position: absolute;
+      width: 5px;
+      height: 21px;
+      right: 44px;
+      bottom: 20px;
+      background-color: #fff;
+      border-radius: 20px 20px 0 0;
+      transform: rotate(320deg);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .tick-mark-2 {
+      position: absolute;
+      width: 5px;
+      height: 32px;
+      left: 41px;
+      bottom: 20px;
+      border-radius: 0 0 20px 20px;
+      background-color: #fff;
+      transform: rotate(230deg);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  }
+  .outline-wrapper {
+    .line-1 {
+      @extend %line-dimension;
+      left: 70px;
+    }
+    .line-2 {
+      @extend %line-dimension;
+      top: 60px;
+      left: 10px;
+      transform: rotate(90deg);
+    }
+    .line-3 {
+      @extend %line-dimension;
+      right: 70px;
+    }
+    .line-4 {
+      @extend %line-dimension;
+      bottom: 60px;
+      left: 10px;
+      transform: rotate(90deg);
+    }
+  }
+  .information-text {
+    position: absolute;
+    bottom: calc(50% - 100px);
+    color: $white;
+    img {
+      margin-bottom: -6px;
+    }
+  }
+  .social-icons {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+  }
+  /* ***** Specific Styles - End ***** */
+  
