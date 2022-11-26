@@ -32,6 +32,7 @@
 // event-participant-registration
 @forward "form";
 @forward "form-image";
+@forward "custom-checkbox";
 
 // contacts
 @forward "map";
@@ -41,7 +42,7 @@
 // footer
 @forward "secondary-navigation";
 
-// news
+// news page
 @forward "breadcrumbs";
 @forward "similar-article-list";
 @forward "lead-image";

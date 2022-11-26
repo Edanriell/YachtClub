@@ -1,0 +1,78 @@
+$checkbox-width: 2rem;
+$checkbox-height: 2rem;
+$checkbox-strokeWidth: 4;
+$checkbox-checkMarkColor: var(--clr-accent-darkTurquoise);
+$checkbox-boxColor: var(--clr-primary-nileBlueHalfTransparent);
+$checkbox-hoverBoxColor: var(--clr-accent-darkTurquoise);
+$checkbox-transitionTimingFunction: cubic-bezier(0.51, 0.92, 0.24, 1);
+
+.custom-checkbox {
+	display: none;
+	pointer-events: none;
+
+	& + label {
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: auto 3fr;
+		align-items: center;
+
+		svg {
+			width: $checkbox-width;
+			height: $checkbox-height;
+			stroke-width: $checkbox-strokeWidth;
+			fill: white;
+
+			.custom-checkbox__box {
+				stroke-dasharray: 320;
+				stroke-dashoffset: 0;
+				fill: white !important;
+				stroke: $checkbox-boxColor;
+				transition: stroke 0.3s $checkbox-transitionTimingFunction,
+					stroke-dashoffset 0.3s $checkbox-transitionTimingFunction;
+			}
+
+			.custom-checkbox__check-mark {
+				stroke-dasharray: 70;
+				stroke-dashoffset: 70;
+				fill: none;
+				stroke: $checkbox-checkMarkColor;
+			}
+		}
+
+		span {
+			padding-left: 1rem;
+		}
+	}
+
+	& + label:hover {
+		.custom-checkbox__box {
+			stroke: $checkbox-hoverBoxColor;
+		}
+	}
+
+	&:checked + label {
+		.custom-checkbox__box {
+			stroke-dashoffset: 320;
+			transition: stroke 0.3s $checkbox-transitionTimingFunction,
+				stroke-dashoffset 0.3s $checkbox-transitionTimingFunction;
+		}
+
+		.custom-checkbox__check-mark {
+			stroke-dashoffset: 0;
+			transition: stroke-dashoffset 0.3s $checkbox-transitionTimingFunction;
+		}
+	}
+}
+
+.custom-checkbox__reverse-animation {
+	.custom-checkbox__box {
+		stroke-dashoffset: 0;
+		transition: stroke 0.3s $checkbox-transitionTimingFunction,
+			stroke-dashoffset 0.3s $checkbox-transitionTimingFunction;
+	}
+
+	.custom-checkbox__check-mark {
+		stroke-dashoffset: 70;
+		transition: stroke-dashoffset 0.3s $checkbox-transitionTimingFunction;
+	}
+}

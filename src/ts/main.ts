@@ -1,12 +1,11 @@
 import "../scss/style.scss";
 import "swiper/css";
 
-import gsap from "gsap";
-
 import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
 import { HeroSlider } from "./components/HeroSlider";
 import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
 import { VideoPlayer } from "./components/VideoPlayer";
+import { CustomCheckbox } from "./components/CustomCheckbox";
 
 Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative]);
 
@@ -16,19 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
 		underlineColor: "hsl(177deg, 100%, 39%)"
 	});
 
+	const customCheckbox = new CustomCheckbox({
+		checkboxSelector: "feedback-agreement",
+		svgSelector: ".custom-checkbox__svg-label",
+		reverseAnimationClassName: "custom-checkbox__reverse-animation"
+	});
+
 	mainNavigationLinkDirectionAwareHoverEffect.init();
-
-	    
-	let checkbox = document.getElementById('cb');
-	let svg = document.getElementById('checkbox');
-
-	svg?.addEventListener('click', () => {
-		if((checkbox as HTMLInputElement).checked)
-			svg?.classList.add('reverse')
-		else 
-			svg?.classList.remove('reverse')
-	})
-
+	customCheckbox.init();
 });
 
 window.addEventListener("load", () => {
