@@ -15,19 +15,40 @@
 }
 
 .social-buttons-list__facebook-icon {
-    fill: none;
+    fill: white;
     width: 4rem;
     height: 4rem;
+    color: #163152;
+    transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
 
 .social-buttons-list__twitter-icon {
-    fill: none;
+    fill: white;
     width: 4rem;
     height: 4rem;
+    color: #163152;
+    transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
 
 .social-buttons-list__instagram-icon {
-    fill: none;
+    fill: white;
     width: 4rem;
     height: 4rem;
+    color: #163152;
+    transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
