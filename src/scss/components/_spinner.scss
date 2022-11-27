@@ -1,0 +1,15 @@
+.spinner {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 20;
+}
+
+.spinner__image {
+	background: url("./../images/spinner.svg") no-repeat center;
+	width: 40px;
+	height: 40px;
+	display: inherit;
+}

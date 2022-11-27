@@ -902,7 +902,7 @@
 				<div class="event-participant-registration__wrapper container">
 					<h2 class="event-participant-registration__section-title section-title section-title--position--left section-title--underline--27rem section-title--underline--left">Станьте участником регаты Sochi Race Week 2021</h2>
 					<div class="event-participant-registration__form">
-						<form class="form" action="#" method="POST">
+						<form class="form" data-event-participant-registration-form action="#" method="POST">
 							<p class="form__description">Заполните форму ниже и мы свяжемся с вами в ближайшее время</p>
 							<div class="form__field form__field--type--text">
 								<label class="form__field-label form__field-label--type--text" for="person-name">Имя</label>
@@ -912,6 +912,8 @@
 									name="person-name"
 									id="person-name"
 									placeholder="Сергей"
+									required
+									data-event-participant-registration-form-name-input
 								/>
 							</div>
 							<div class="form__field form__field--type--tel">
@@ -922,6 +924,8 @@
 									name="person-number"
 									id="person-number"
 									placeholder="+7 999 555 66 77"
+									required
+									data-event-participant-registration-form-phone-input
 								/>
 							</div>
 							<div class="form__field form__field--type--email">
@@ -932,6 +936,8 @@
 									name="person-email"
 									id="person-email"
 									placeholder="Example@mail.com"
+									required
+									data-event-participant-registration-form-email-input
 								/>
 							</div>
 							<div class="form__field form__field--type--checkbox">
@@ -945,7 +951,9 @@
 									<span>Я даю согласие на обработку персональных данных</span>
 								</label>
 							</div>
-							<button class="form__button-submit" type="submit">Отправить</button>
+							<button class="form__button-submit" data-event-participant-registration-form-submit-button type="submit">
+								<span>Отправить</span>
+							</button>
 						</form>
 					</div>
 					<div class="event-participant-registration__form-image">
@@ -1132,7 +1140,7 @@
 						</div>
 						<div class="secondary-navigation__content-section">
 							<dt class="secondary-navigation__content-section-title">Регаты</dt>
-							<dd class="secondary-navigation__main-content-wrapper"> 
+							<dd class="secondary-navigation__main-content-wrapper">
 								<ul class="secondary-navigation__main-content">
 									<li class="secondary-navigation__main-content-item">
 										<a class="secondary-navigation__main-content-item-link" href="#">Корпоративные регаты</a>
@@ -1156,5 +1164,6 @@
 				</div>
 			</div>
 		</footer>
+		<div class="notifications-container"></div>
 	</body>
 </html>
