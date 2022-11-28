@@ -1,4 +1,4 @@
-// Add icon support and refactor a bit
+import gsap from "gsap";
 // add support of multiple errors (errors variation)
 
 //
@@ -56,6 +56,7 @@ export class FormValidation {
 
 	init(): void {
 		this.#createInitialState(this.inputsArray);
+
 		for (const input of this.inputsArray) {
 			document.querySelector(input.selector)?.addEventListener("input", event => {
 				const currentInput = event.target as HTMLInputElement;
@@ -93,11 +94,12 @@ export class FormValidation {
 		const validationResult = regExp.test(inputValue);
 		this.#changeInputStyles(inputStyle, targetInput, validationResult);
 		this.#displayErrorMessage(targetInput, errorMessage, validationResult);
+		this.#displayInputStateIcon(targetInput, validationResult);
 		this.formState = {
 			...this.formState,
 			[inputName]: validationResult
 		};
-		this.#checkState();
+		this.#toggleSubmitButtonAvailability();
 	}
 
 	#createInitialState(inputsArray: Input): void {
@@ -112,7 +114,7 @@ export class FormValidation {
 		this.formState = state;
 	}
 
-	#checkState(): void {
+	#toggleSubmitButtonAvailability(): void {
 		if (!this.button) return;
 		switch (!Object.values(this.formState).includes(false)) {
 			case true:
@@ -124,8 +126,6 @@ export class FormValidation {
 				(this.button as HTMLButtonElement).style.filter = "grayscale(100%)";
 				break;
 			default:
-				(this.button as HTMLButtonElement).disabled = true;
-				(this.button as HTMLButtonElement).style.filter = "grayscale(100%)";
 				break;
 		}
 	}
@@ -133,7 +133,7 @@ export class FormValidation {
 	#resetState(): void {
 		this.#createInitialState(this.inputsArray);
 		const form = document.querySelector(`${this.form}`);
-		const inputs = form?.querySelectorAll("input");
+		const inputs = form?.querySelectorAll("input"); //
 		inputs?.forEach(input => {
 			input.classList.remove("Input-Invalid");
 			input.classList.remove("Input-Valid");
@@ -179,6 +179,7 @@ export class FormValidation {
 		const errorMessage = (input as HTMLInputElement).parentNode?.querySelector(
 			".ModalForm-ErrorMessage"
 		);
+		// add gsap here
 		if (errorMessage) errorMessage.remove();
 	}
 
@@ -193,50 +194,101 @@ export class FormValidation {
 		errorMessage.style.cssText = messageStyle;
 		errorMessage.classList.add("ModalForm-ErrorMessage");
 		(input as HTMLInputElement).parentNode?.append(errorMessage);
+		// add gsap here
 	}
 
-	#showInputStateIcon(isInputValid: boolean): void {
+	#displayInputStateIcon(
+		targetInput: EventTarget | null,
+		isValid: boolean
+	): void {
+		switch (isValid) {
+			case true:
+				this.#showInputStateIcon(targetInput, isValid);
+				this.#removeInputStateIcon(targetInput, !isValid);
+				break;
+			case false:
+				this.#showInputStateIcon(targetInput, isValid);
+				this.#removeInputStateIcon(targetInput, !isValid);
+				break;
+			default:
+				break;
+		}
+	}
+
+	#showInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean): void {
+		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--success");
+		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--failure");
+
+		if (successIcon || failureIcon) return;
+
 		if (isInputValid) {
 			this.#createInputStateIcon({
 				iconType: SuccessIcon,
-				iconDescription: "Ошибка",
-				iconWidth: 20,
-				iconHeight: 20
+				iconDescription: "Успех",
+				iconWidth: 30,
+				iconHeight: 30,
+				input: targetInput,
+				classes: "input-state-icon--type--success"
 			});
 		} else {
 			this.#createInputStateIcon({
 				iconType: FailureIcon,
-				iconDescription: "Успех",
-				iconWidth: 20,
-				iconHeight: 20
+				iconDescription: "Ошибка",
+				iconWidth: 30,
+				iconHeight: 30,
+				input: targetInput,
+				classes: "input-state-icon--type--failure"
 			});
 		}
+	}
+
+	#removeInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean) {
+		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--success");
+		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--failure");
+
+		console.log(isInputValid);
+
+		// if (!isInputValid && failureIcon) {
+		// 	failureIcon.remove();
+		// 	// add gsap here
+		// } else if (isInputValid && successIcon) {
+		// 	successIcon.remove();
+		// 	// add gsap here
+		// }
 	}
 
 	#createInputStateIcon({
 		iconType,
 		iconDescription,
 		iconWidth,
-		iconHeight
+		iconHeight,
+		input,
+		classes
 	}: {
 		iconType: string;
 		iconDescription: string;
-		iconWidth: number
-		iconHeight: number
+		iconWidth: number;
+		iconHeight: number;
+		input: EventTarget | null;
+		classes: string;
 	}): void {
 		const icon = document.createElement("div");
-		icon.classList.add("InputStateIcon");
+		icon.classList.add("input-state-icon", `${classes}`);
 		icon.style.cssText = `
 			width: ${iconWidth}px;
 			height: ${iconHeight}px;
 			position: absolute;
-			top: 0;
-			left: 0;
-		`
+			top: 50%;
+			right: -10%;
+			transform: translateY(-30%);
+			object-fit: cover;
+			`;
 		icon.innerHTML = `
 			<img src=${iconType} alt="">
 				<span class="visually-hidden">${iconDescription}</span>
 			</img>
 		`;
+		(input as HTMLElement).parentElement?.append(icon);
+		// add gsap here
 	}
 }
