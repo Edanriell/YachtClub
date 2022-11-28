@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
 					valid: `
 						border: 0.1rem solid darkgreen;
 					`,
-					unvalid: `
+					invalid: `
 						border: 0.1rem solid darkred;
 					`
 				},
@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 					valid: `
 						border: 0.1rem solid darkgreen;
 					`,
-					unvalid: `
+					invalid: `
 						border: 0.1rem solid darkred;
 					`
 				},
@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
 					valid: `
 						border: 0.1rem solid darkgreen;
 					`,
-					unvalid: `
+					invalid: `
 						border: 0.1rem solid darkred;
 					`
 				},

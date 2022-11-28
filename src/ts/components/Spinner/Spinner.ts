@@ -42,17 +42,6 @@ export class Spinner implements ISpinner {
 		this.#createSpinner(position);
 	}
 
-	hideSpinner(): void {
-		this.#spinnerAnimations({
-			hideSpinner: true
-		});
-	}
-
-	#removeSpinner(): void {
-		const spinner = document.querySelector(`.${Spinner.spinnerSelector}`);
-		spinner?.remove();
-	}
-
 	#createSpinner(position: SpinnerPosition): void {
 		const spinnerContainer = document.createElement("div");
 		spinnerContainer.classList.add(`${Spinner.spinnerSelector}`);
@@ -74,7 +63,7 @@ export class Spinner implements ISpinner {
 			Spinner.#tlSpinner.fromTo(
 				`.${Spinner.spinnerSelector}`,
 				{ opacity: 0, scale: 0.4 },
-				{ opacity: 1, scale: 1.2, duration: 1, ease: "power2.out", delay: 0.4 }
+				{ opacity: 1, scale: 1.2, duration: 0.3, ease: "power2.out", delay: 0.4 }
 			);
 		}
 		if (hideSpinner) {
@@ -84,13 +73,24 @@ export class Spinner implements ISpinner {
 				{
 					opacity: 0,
 					scale: 0.4,
-					duration: 0.4,
+					duration: 0.3,
 					onComplete: () => {
 						this.#removeSpinner();
 					}
 				}
 			);
 		}
+	}
+
+	hideSpinner(): void {
+		this.#spinnerAnimations({
+			hideSpinner: true
+		});
+	}
+
+	#removeSpinner(): void {
+		const spinner = document.querySelector(`.${Spinner.spinnerSelector}`);
+		spinner?.remove();
 	}
 
 	toggleButtonTextVisibility({

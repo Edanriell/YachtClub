@@ -1,3 +1,5 @@
+// Search for errors and bugs
+
 import { gsap } from "gsap";
 
 interface INotifications {

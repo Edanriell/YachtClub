@@ -1,3 +1,11 @@
+// Add icon support and refactor a bit
+// add support of multiple errors (errors variation)
+
+//
+import SuccessIcon from "../../../images/icons/circle-check-solid.svg";
+import FailureIcon from "../../../images/icons/circle-exclamation-solid.svg";
+//
+
 type State = Record<string, boolean>;
 
 export type Input = Array<{
@@ -15,7 +23,7 @@ type ErrorMessage = {
 
 type InputStyle = {
 	valid: string;
-	unvalid: string;
+	invalid: string;
 };
 
 export class FormValidation {
@@ -143,7 +151,7 @@ export class FormValidation {
 			case false:
 				(input as HTMLInputElement).classList.add("Input-Invalid");
 				(input as HTMLInputElement).classList.remove("Input-Valid");
-				(input as HTMLInputElement).style.cssText = style.unvalid;
+				(input as HTMLInputElement).style.cssText = style.invalid;
 				break;
 			default:
 				break;
@@ -185,5 +193,50 @@ export class FormValidation {
 		errorMessage.style.cssText = messageStyle;
 		errorMessage.classList.add("ModalForm-ErrorMessage");
 		(input as HTMLInputElement).parentNode?.append(errorMessage);
+	}
+
+	#showInputStateIcon(isInputValid: boolean): void {
+		if (isInputValid) {
+			this.#createInputStateIcon({
+				iconType: SuccessIcon,
+				iconDescription: "Ошибка",
+				iconWidth: 20,
+				iconHeight: 20
+			});
+		} else {
+			this.#createInputStateIcon({
+				iconType: FailureIcon,
+				iconDescription: "Успех",
+				iconWidth: 20,
+				iconHeight: 20
+			});
+		}
+	}
+
+	#createInputStateIcon({
+		iconType,
+		iconDescription,
+		iconWidth,
+		iconHeight
+	}: {
+		iconType: string;
+		iconDescription: string;
+		iconWidth: number
+		iconHeight: number
+	}): void {
+		const icon = document.createElement("div");
+		icon.classList.add("InputStateIcon");
+		icon.style.cssText = `
+			width: ${iconWidth}px;
+			height: ${iconHeight}px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		`
+		icon.innerHTML = `
+			<img src=${iconType} alt="">
+				<span class="visually-hidden">${iconDescription}</span>
+			</img>
+		`;
 	}
 }

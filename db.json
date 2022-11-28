@@ -1,0 +1,24 @@
+{
+  "eventParticipants": [
+    {
+      "person-name": "Test",
+      "person-number": "+123",
+      "person-email": "Test@test.lvs",
+      "feedback-agreement": "on",
+      "id": 1
+    },
+    {
+      "person-name": "TestTwo",
+      "person-number": "+123",
+      "person-email": "Test2@test2.com",
+      "feedback-agreement": "on",
+      "id": 2
+    },
+    {
+      "person-name": "TestThree",
+      "person-number": "+123",
+      "person-email": "Test3@test3.com",
+      "id": 3
+    }
+  ]
+}

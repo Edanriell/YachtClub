@@ -52,6 +52,7 @@
 		"html-minifier-terser": "^7.0.0",
 		"html-minimizer-webpack-plugin": "^4.1.0",
 		"html-webpack-plugin": "^5.5.0",
+		"json-server": "^0.17.1",
 		"mini-css-extract-plugin": "^2.6.1",
 		"obsolete-webpack-plugin": "^0.5.6",
 		"postcss": "^8.4.16",
