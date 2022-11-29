@@ -1,7 +1,6 @@
-import gsap from "gsap";
+import { FormValidationErrorMessage } from "./FormValidationErrorMessage";
+import { FormValidationInputStateIcon } from "./FormValidationInputStateIcon";
 // add support of multiple errors (errors variation)
-
-type State = Record<string, boolean>;
 
 export type Input = Array<{
 	uniqueName: string;
@@ -12,9 +11,16 @@ export type Input = Array<{
 	inputStateIcon: InputStateIcon;
 }>;
 
-type ErrorMessage = {
+export type ErrorMessage = {
 	messageText: string;
 	messageStyle: string;
+};
+
+export type InputStateIcon = {
+	validInputIcon: string;
+	invalidInputIcon: string;
+	iconWidth: number;
+	iconHeight: number;
 };
 
 type InputStyle = {
@@ -22,13 +28,7 @@ type InputStyle = {
 	invalid: string;
 };
 
-type InputStateIcon = {
-	validInputIcon: string;
-	invalidInputIcon: string;
-	iconWidth: number;
-	iconHeight: number;
-};
-
+type State = Record<string, boolean>;
 export class FormValidation {
 	formState = {};
 
@@ -39,6 +39,10 @@ export class FormValidation {
 	initialInputStyle: string;
 
 	button: HTMLElement | null;
+
+	errorMessage: FormValidationErrorMessage;
+
+	inputStateIcon: FormValidationInputStateIcon;
 
 	constructor({
 		inputs,
@@ -55,6 +59,8 @@ export class FormValidation {
 		this.inputsArray = inputs;
 		this.initialInputStyle = initialInputStyle;
 		this.button = document.querySelector(submitButton);
+		this.errorMessage = new FormValidationErrorMessage();
+		this.inputStateIcon = new FormValidationInputStateIcon();
 	}
 
 	init(): void {
@@ -99,8 +105,11 @@ export class FormValidation {
 	}): void {
 		const validationResult = regExp.test(inputValue);
 		this.#changeInputStyles(inputStyle, targetInput, validationResult);
-		this.#displayErrorMessage(targetInput, errorMessage, validationResult);
-		this.#displayInputStateIcon(targetInput, validationResult, inputStateIcon);
+
+		// this.#displayErrorMessage(targetInput, errorMessage, validationResult); /////////////
+		// this.#displayInputStateIcon(targetInput, validationResult, inputStateIcon); ///////////
+		this.errorMessage.displayErrorMessage(targetInput, errorMessage, validationResult);
+		this.inputStateIcon.displayInputStateIcon(targetInput, validationResult, inputStateIcon);
 		this.formState = {
 			...this.formState,
 			[inputName]: validationResult
@@ -163,139 +172,140 @@ export class FormValidation {
 				break;
 		}
 	}
+/////////////
+	// #displayErrorMessage(
+	// 	targetInput: EventTarget | null,
+	// 	errorMessage: ErrorMessage,
+	// 	isValid: boolean
+	// ): void {
+	// 	switch (isValid) {
+	// 		case true:
+	// 			this.#removeErrorMessage(targetInput);
+	// 			break;
+	// 		case false:
+	// 			this.#createErrorMessage(targetInput, errorMessage);
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
+//////////////
+	// #removeErrorMessage(input: EventTarget | null): void {
+	// 	const errorMessage = (input as HTMLInputElement).parentNode?.querySelector(
+	// 		".ModalForm-ErrorMessage"
+	// 	);
+	// 	// add gsap here
+	// 	if (errorMessage) errorMessage.remove();
+	// }
+///////////////////////
+	// #createErrorMessage(
+	// 	input: EventTarget | null,
+	// 	{ messageText, messageStyle }: { messageText: string; messageStyle: string }
+	// ): void {
+	// 	if ((input as HTMLInputElement).parentNode?.querySelector(".ModalForm-ErrorMessage"))
+	// 		return;
+	// 	const errorMessage = document.createElement("span");
+	// 	errorMessage.innerText = messageText;
+	// 	errorMessage.style.cssText = messageStyle;
+	// 	errorMessage.classList.add("ModalForm-ErrorMessage");
+	// 	(input as HTMLInputElement).parentNode?.append(errorMessage);
+	// 	// add gsap here
+	// }
+//////////////////
+	// #displayInputStateIcon(
+	// 	targetInput: EventTarget | null,
+	// 	isValid: boolean,
+	// 	inputStateIcon: InputStateIcon
+	// ): void {
+	// 	this.#removeInputStateIcon(targetInput, isValid);
+	// 	this.#showInputStateIcon(targetInput, isValid, inputStateIcon);
+	// }
+/////////
+	// #showInputStateIcon(
+	// 	targetInput: EventTarget | null,
+	// 	isInputValid: boolean,
+	// 	inputStateIcon: InputStateIcon
+	// ): void {
+	// 	const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+	// 		".input-state-icon--type--success"
+	// 	);
+	// 	const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+	// 		".input-state-icon--type--failure"
+	// 	);
 
-	#displayErrorMessage(
-		targetInput: EventTarget | null,
-		errorMessage: ErrorMessage,
-		isValid: boolean
-	): void {
-		switch (isValid) {
-			case true:
-				this.#removeErrorMessage(targetInput);
-				break;
-			case false:
-				this.#createErrorMessage(targetInput, errorMessage);
-				break;
-			default:
-				break;
-		}
-	}
+	// 	if (successIcon || failureIcon) return;
 
-	#removeErrorMessage(input: EventTarget | null): void {
-		const errorMessage = (input as HTMLInputElement).parentNode?.querySelector(
-			".ModalForm-ErrorMessage"
-		);
-		// add gsap here
-		if (errorMessage) errorMessage.remove();
-	}
+	// 	if (isInputValid) {
+	// 		this.#createInputStateIcon({
+	// 			iconType: inputStateIcon.validInputIcon,
+	// 			iconDescription: "Успех",
+	// 			iconWidth: inputStateIcon.iconWidth,
+	// 			iconHeight: inputStateIcon.iconHeight,
+	// 			input: targetInput,
+	// 			classes: "input-state-icon--type--success"
+	// 		});
+	// 	} else {
+	// 		this.#createInputStateIcon({
+	// 			iconType: inputStateIcon.invalidInputIcon,
+	// 			iconDescription: "Ошибка",
+	// 			iconWidth: inputStateIcon.iconWidth,
+	// 			iconHeight: inputStateIcon.iconHeight,
+	// 			input: targetInput,
+	// 			classes: "input-state-icon--type--failure"
+	// 		});
+	// 	}
+	// }
+///////
+	// #removeInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean) {
+	// 	const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+	// 		".input-state-icon--type--success"
+	// 	);
+	// 	const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+	// 		".input-state-icon--type--failure"
+	// 	);
 
-	#createErrorMessage(
-		input: EventTarget | null,
-		{ messageText, messageStyle }: { messageText: string; messageStyle: string }
-	): void {
-		if ((input as HTMLInputElement).parentNode?.querySelector(".ModalForm-ErrorMessage"))
-			return;
-		const errorMessage = document.createElement("span");
-		errorMessage.innerText = messageText;
-		errorMessage.style.cssText = messageStyle;
-		errorMessage.classList.add("ModalForm-ErrorMessage");
-		(input as HTMLInputElement).parentNode?.append(errorMessage);
-		// add gsap here
-	}
-
-	#displayInputStateIcon(
-		targetInput: EventTarget | null,
-		isValid: boolean,
-		inputStateIcon: InputStateIcon
-	): void {
-		this.#removeInputStateIcon(targetInput, isValid);
-		this.#showInputStateIcon(targetInput, isValid, inputStateIcon);
-	}
-
-	#showInputStateIcon(
-		targetInput: EventTarget | null,
-		isInputValid: boolean,
-		inputStateIcon: InputStateIcon
-	): void {
-		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--success"
-		);
-		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--failure"
-		);
-
-		if (successIcon || failureIcon) return;
-
-		if (isInputValid) {
-			this.#createInputStateIcon({
-				iconType: inputStateIcon.validInputIcon,
-				iconDescription: "Успех",
-				iconWidth: inputStateIcon.iconWidth,
-				iconHeight: inputStateIcon.iconHeight,
-				input: targetInput,
-				classes: "input-state-icon--type--success"
-			});
-		} else {
-			this.#createInputStateIcon({
-				iconType: inputStateIcon.invalidInputIcon,
-				iconDescription: "Ошибка",
-				iconWidth: inputStateIcon.iconWidth,
-				iconHeight: inputStateIcon.iconHeight,
-				input: targetInput,
-				classes: "input-state-icon--type--failure"
-			});
-		}
-	}
-
-	#removeInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean) {
-		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--success"
-		);
-		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--failure"
-		);
-
-		if (isInputValid && failureIcon) {
-			failureIcon.remove();
-			// add gsap here
-		} else if (!isInputValid && successIcon) {
-			successIcon.remove();
-			// add gsap here
-		}
-	}
-
-	#createInputStateIcon({
-		iconType,
-		iconDescription,
-		iconWidth,
-		iconHeight,
-		input,
-		classes
-	}: {
-		iconType: string;
-		iconDescription: string;
-		iconWidth: number;
-		iconHeight: number;
-		input: EventTarget | null;
-		classes: string;
-	}): void {
-		const icon = document.createElement("div");
-		icon.classList.add("input-state-icon", `${classes}`);
-		icon.style.cssText = `
-			width: ${iconWidth}px;
-			height: ${iconHeight}px;
-			position: absolute;
-			top: 50%;
-			right: -10%;
-			transform: translateY(-30%);
-			object-fit: cover;
-			`;
-		icon.innerHTML = `
-			<img src=${iconType} alt="">
-				<span class="visually-hidden">${iconDescription}</span>
-			</img>
-		`;
-		(input as HTMLElement).parentElement?.append(icon);
-		// add gsap here
-	}
+	// 	if (isInputValid && failureIcon) {
+	// 		failureIcon.remove();
+	// 		// add gsap here
+	// 	} else if (!isInputValid && successIcon) {
+	// 		successIcon.remove();
+	// 		// add gsap here
+	// 	}
+	// }
+//////
+	// #createInputStateIcon({
+	// 	iconType,
+	// 	iconDescription,
+	// 	iconWidth,
+	// 	iconHeight,
+	// 	input,
+	// 	classes
+	// }: {
+	// 	iconType: string;
+	// 	iconDescription: string;
+	// 	iconWidth: number;
+	// 	iconHeight: number;
+	// 	input: EventTarget | null;
+	// 	classes: string;
+	// }): void {
+	// 	const icon = document.createElement("div");
+	// 	icon.classList.add("input-state-icon", `${classes}`);
+	// 	icon.style.cssText = `
+	// 		width: ${iconWidth}px;
+	// 		height: ${iconHeight}px;
+	// 		position: absolute;
+	// 		top: 50%;
+	// 		right: -10%;
+	// 		transform: translateY(-30%);
+	// 		object-fit: cover;
+	// 		`;
+	// 	icon.innerHTML = `
+	// 		<img src=${iconType} alt="">
+	// 			<span class="visually-hidden">${iconDescription}</span>
+	// 		</img>
+	// 	`;
+	// 	(input as HTMLElement).parentElement?.append(icon);
+	// 	// add gsap here
+	// }
+	//////
 }
