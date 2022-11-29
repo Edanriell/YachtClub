@@ -1,7 +1,15 @@
 import gsap from "gsap";
 import { InputStateIcon } from "./FormValidation";
 
-export class FormValidationInputStateIcon {
+interface IFormValidationInputStateIcon {
+	displayInputStateIcon(
+		targetInput: EventTarget | null,
+		isValid: boolean,
+		inputStateIcon: InputStateIcon
+	): void;
+}
+
+export class FormValidationInputStateIcon implements IFormValidationInputStateIcon {
 	public displayInputStateIcon(
 		targetInput: EventTarget | null,
 		isValid: boolean,
