@@ -31,13 +31,6 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 			".input-state-icon--type--failure"
 		);
 
-		// if (successIcon || failureIcon) {
-		// 	console.log("icon found");
-		// 	console.log(successIcon);
-		// 	console.log(failureIcon);
-		// 	return;
-		// }
-
 		if (isInputValid && !successIcon) {
 			this.#createInputStateIcon({
 				iconType: inputStateIcon.validInputIcon,

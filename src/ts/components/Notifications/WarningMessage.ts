@@ -101,10 +101,6 @@ export class WarningMessage extends Notifications implements IWarningMessage {
 			timeout: true
 		});
 
-		// this.setStyles({
-		// 	notificationSelector: ".notification"
-		// });
-
 		this.initLoadingBar({
 			loadingBarSelector: ".notification__time-bar-current"
 		});

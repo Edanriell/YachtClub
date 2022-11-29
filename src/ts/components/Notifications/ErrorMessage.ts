@@ -101,10 +101,6 @@ export class ErrorMessage extends Notifications implements IErrorMessage {
 			timeout: true
 		});
 
-		// this.setStyles({
-		// 	notificationSelector: ".notification"
-		// });
-
 		this.initLoadingBar({
 			loadingBarSelector: ".notification__time-bar-current"
 		});

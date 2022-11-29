@@ -101,10 +101,6 @@ export class SuccessMessage extends Notifications implements ISuccessMessage {
 			timeout: true
 		});
 
-		// this.setStyles({
-		// 	notificationSelector: ".notification"
-		// });
-
 		this.initLoadingBar({
 			loadingBarSelector: ".notification__time-bar-current"
 		});

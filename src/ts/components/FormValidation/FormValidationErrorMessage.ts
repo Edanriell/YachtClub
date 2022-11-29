@@ -17,16 +17,6 @@ export class FormValidationErrorMessage implements IFormValidationErrorMessage {
 	): void {
 		if (isValid) this.#removeErrorMessage(targetInput);
 		else this.#createErrorMessage(targetInput, errorMessage);
-		// switch (isValid) {
-		// 	case true:
-		// 		this.#removeErrorMessage(targetInput);
-		// 		break;
-		// 	case false:
-		// 		this.#createErrorMessage(targetInput, errorMessage);
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
 	}
 
 	#removeErrorMessage(input: EventTarget | null): void {
