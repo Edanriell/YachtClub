@@ -1,6 +1,9 @@
 import "../scss/style.scss";
 import "swiper/css";
 
+import SuccessIcon from "../images/icons/circle-check-solid.svg";
+import FailureIcon from "../images/icons/circle-exclamation-solid.svg";
+
 import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
 import { HeroSlider } from "./components/HeroSlider";
 import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
@@ -57,6 +60,12 @@ window.addEventListener("DOMContentLoaded", () => {
 						z-index: 4;
 						font-family: var(--ff-normal-400);
 					`
+				},
+				inputStateIcon: {
+					validInputIcon: SuccessIcon,
+					invalidInputIcon: FailureIcon,
+					iconWidth: 30,
+					iconHeight: 30
 				}
 			},
 			{
@@ -84,6 +93,12 @@ window.addEventListener("DOMContentLoaded", () => {
 						z-index: 4;
 						font-family: var(--ff-normal-400);
 					`
+				},
+				inputStateIcon: {
+					validInputIcon: SuccessIcon,
+					invalidInputIcon: FailureIcon,
+					iconWidth: 30,
+					iconHeight: 30
 				}
 			},
 			{
@@ -111,6 +126,12 @@ window.addEventListener("DOMContentLoaded", () => {
 						z-index: 4;
 						font-family: var(--ff-normal-400);
 					`
+				},
+				inputStateIcon: {
+					validInputIcon: SuccessIcon,
+					invalidInputIcon: FailureIcon,
+					iconWidth: 30,
+					iconHeight: 30
 				}
 			}
 		],

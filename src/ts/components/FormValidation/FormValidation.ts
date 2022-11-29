@@ -1,11 +1,6 @@
 import gsap from "gsap";
 // add support of multiple errors (errors variation)
 
-//
-import SuccessIcon from "../../../images/icons/circle-check-solid.svg";
-import FailureIcon from "../../../images/icons/circle-exclamation-solid.svg";
-//
-
 type State = Record<string, boolean>;
 
 export type Input = Array<{
@@ -14,6 +9,7 @@ export type Input = Array<{
 	testRegExp: RegExp;
 	style: InputStyle;
 	errorMessage: ErrorMessage;
+	inputStateIcon: InputStateIcon;
 }>;
 
 type ErrorMessage = {
@@ -24,6 +20,13 @@ type ErrorMessage = {
 type InputStyle = {
 	valid: string;
 	invalid: string;
+};
+
+type InputStateIcon = {
+	validInputIcon: string;
+	invalidInputIcon: string;
+	iconWidth: number;
+	iconHeight: number;
 };
 
 export class FormValidation {
@@ -67,7 +70,8 @@ export class FormValidation {
 					targetInput: currentInput,
 					inputValue: currentInputValue,
 					regExp: input.testRegExp,
-					errorMessage: input.errorMessage
+					errorMessage: input.errorMessage,
+					inputStateIcon: input.inputStateIcon
 				});
 			});
 		}
@@ -82,7 +86,8 @@ export class FormValidation {
 		targetInput,
 		inputValue,
 		regExp,
-		errorMessage
+		errorMessage,
+		inputStateIcon
 	}: {
 		inputName: string;
 		inputStyle: InputStyle;
@@ -90,11 +95,12 @@ export class FormValidation {
 		inputValue: string;
 		regExp: RegExp;
 		errorMessage: ErrorMessage;
+		inputStateIcon: InputStateIcon;
 	}): void {
 		const validationResult = regExp.test(inputValue);
 		this.#changeInputStyles(inputStyle, targetInput, validationResult);
 		this.#displayErrorMessage(targetInput, errorMessage, validationResult);
-		this.#displayInputStateIcon(targetInput, validationResult);
+		this.#displayInputStateIcon(targetInput, validationResult, inputStateIcon);
 		this.formState = {
 			...this.formState,
 			[inputName]: validationResult
@@ -199,43 +205,42 @@ export class FormValidation {
 
 	#displayInputStateIcon(
 		targetInput: EventTarget | null,
-		isValid: boolean
+		isValid: boolean,
+		inputStateIcon: InputStateIcon
 	): void {
-		switch (isValid) {
-			case true:
-				this.#showInputStateIcon(targetInput, isValid);
-				this.#removeInputStateIcon(targetInput, !isValid);
-				break;
-			case false:
-				this.#showInputStateIcon(targetInput, isValid);
-				this.#removeInputStateIcon(targetInput, !isValid);
-				break;
-			default:
-				break;
-		}
+		this.#removeInputStateIcon(targetInput, isValid);
+		this.#showInputStateIcon(targetInput, isValid, inputStateIcon);
 	}
 
-	#showInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean): void {
-		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--success");
-		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--failure");
+	#showInputStateIcon(
+		targetInput: EventTarget | null,
+		isInputValid: boolean,
+		inputStateIcon: InputStateIcon
+	): void {
+		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+			".input-state-icon--type--success"
+		);
+		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+			".input-state-icon--type--failure"
+		);
 
 		if (successIcon || failureIcon) return;
 
 		if (isInputValid) {
 			this.#createInputStateIcon({
-				iconType: SuccessIcon,
+				iconType: inputStateIcon.validInputIcon,
 				iconDescription: "Успех",
-				iconWidth: 30,
-				iconHeight: 30,
+				iconWidth: inputStateIcon.iconWidth,
+				iconHeight: inputStateIcon.iconHeight,
 				input: targetInput,
 				classes: "input-state-icon--type--success"
 			});
 		} else {
 			this.#createInputStateIcon({
-				iconType: FailureIcon,
+				iconType: inputStateIcon.invalidInputIcon,
 				iconDescription: "Ошибка",
-				iconWidth: 30,
-				iconHeight: 30,
+				iconWidth: inputStateIcon.iconWidth,
+				iconHeight: inputStateIcon.iconHeight,
 				input: targetInput,
 				classes: "input-state-icon--type--failure"
 			});
@@ -243,18 +248,20 @@ export class FormValidation {
 	}
 
 	#removeInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean) {
-		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--success");
-		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(".input-state-icon--type--failure");
+		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+			".input-state-icon--type--success"
+		);
+		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
+			".input-state-icon--type--failure"
+		);
 
-		console.log(isInputValid);
-
-		// if (!isInputValid && failureIcon) {
-		// 	failureIcon.remove();
-		// 	// add gsap here
-		// } else if (isInputValid && successIcon) {
-		// 	successIcon.remove();
-		// 	// add gsap here
-		// }
+		if (isInputValid && failureIcon) {
+			failureIcon.remove();
+			// add gsap here
+		} else if (!isInputValid && successIcon) {
+			successIcon.remove();
+			// add gsap here
+		}
 	}
 
 	#createInputStateIcon({
