@@ -43,16 +43,16 @@ window.addEventListener("DOMContentLoaded", () => {
 					/^[a-zа-яё\s]+$/iu,
 				style: {
 					valid: `
-						border: 0.1rem solid darkgreen;
+						border: 0.1rem solid #198754;
 					`,
 					invalid: `
-						border: 0.1rem solid darkred;
+						border: 0.1rem solid #dc3545;
 					`
 				},
 				errorMessage: {
 					messageText: "Неверное имя",
 					messageStyle: `
-						color: darkred;
+						color: #dc3545;
 						position: absolute;
 						font-size: 1.1rem;
 						bottom: 0;
@@ -76,16 +76,16 @@ window.addEventListener("DOMContentLoaded", () => {
 					/^(\+)\d+$/,
 				style: {
 					valid: `
-						border: 0.1rem solid darkgreen;
+						border: 0.1rem solid #198754;
 					`,
 					invalid: `
-						border: 0.1rem solid darkred;
+						border: 0.1rem solid #dc3545;
 					`
 				},
 				errorMessage: {
 					messageText: "Неверный номер телефона",
 					messageStyle: `
-						color: darkred;
+						color: #dc3545;
 						position: absolute;
 						font-size: 1.1rem;
 						bottom: 0;
@@ -109,16 +109,16 @@ window.addEventListener("DOMContentLoaded", () => {
 					/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
 				style: {
 					valid: `
-						border: 0.1rem solid darkgreen;
+						border: 0.1rem solid #198754;
 					`,
 					invalid: `
-						border: 0.1rem solid darkred;
+						border: 0.1rem solid #dc3545;
 					`
 				},
 				errorMessage: {
 					messageText: "Неверный адрес электронной почты",
 					messageStyle: `
-						color: darkred;
+						color: #dc3545;
 						position: absolute;
 						font-size: 1.1rem;
 						bottom: 1rem;

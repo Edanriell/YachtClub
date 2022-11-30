@@ -3,7 +3,7 @@ import { FormValidationInputStateIcon } from "./FormValidationInputStateIcon";
 import { FormValidationSubmitButton } from "./FormValidationSubmitButton";
 import { FormValidationInput } from "./FormValidationInput";
 // add support of multiple errors (errors variation)
-// Fix bug with icons on button submit !!!!!!!!!!!!
+
 interface IFormValidation {
 	formState: Object;
 	form: string;
@@ -103,7 +103,7 @@ export class FormValidation implements IFormValidation {
 		}
 		this.button?.addEventListener("click", () => {
 			this.#resetState();
-			// FIX BUG WITH ICONS HERE!
+			this.inputStateIcon.removeAllSuccessIcons();
 		});
 	}
 

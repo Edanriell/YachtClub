@@ -137,4 +137,22 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 			}
 		);
 	}
+
+	public removeAllSuccessIcons() {
+		const successIcons = document.querySelectorAll(".input-state-icon--type--success");
+		gsap.fromTo(
+			successIcons,
+			{ opacity: 1, scale: 1 },
+			{
+				opacity: 0,
+				scale: 0,
+				duration: 0.3,
+				ease: "power2.out",
+				stagger: 0.15,
+				onComplete: () => {
+					successIcons.forEach(icon => icon.remove());
+				}
+			},
+		);
+	}
 }
