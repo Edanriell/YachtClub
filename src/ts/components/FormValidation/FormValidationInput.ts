@@ -1,24 +1,41 @@
 import { InputStyle } from "./FormValidation";
 
 interface IFormValidationInput {
-	changeInputStyles(style: InputStyle, input: EventTarget | null, isValid: boolean): void;
+	changeInputStyles({
+		style,
+		input,
+		isValid
+	}: {
+		style: InputStyle;
+		input: EventTarget | null;
+		isValid: boolean;
+		validInputClass: string;
+		invalidInputClass: string;
+	}): void;
 }
 
 export class FormValidationInput implements IFormValidationInput {
-	public changeInputStyles(style: InputStyle, input: EventTarget | null, isValid: boolean): void {
-		switch (isValid) {
-			case true:
-				(input as HTMLInputElement).classList.remove("Input-Invalid");
-				(input as HTMLInputElement).classList.add("Input-Valid");
-				(input as HTMLInputElement).style.cssText = style.valid;
-				break;
-			case false:
-				(input as HTMLInputElement).classList.add("Input-Invalid");
-				(input as HTMLInputElement).classList.remove("Input-Valid");
-				(input as HTMLInputElement).style.cssText = style.invalid;
-				break;
-			default:
-				break;
+	public changeInputStyles({
+		style,
+		input,
+		isValid,
+		validInputClass,
+		invalidInputClass
+	}: {
+		style: InputStyle;
+		input: EventTarget | null;
+		isValid: boolean;
+		validInputClass: string;
+		invalidInputClass: string;
+	}): void {
+		if (isValid) {
+			(input as HTMLInputElement).classList.remove(invalidInputClass);
+			(input as HTMLInputElement).classList.add(validInputClass);
+			(input as HTMLInputElement).style.cssText = style.valid;
+		} else {
+			(input as HTMLInputElement).classList.add(invalidInputClass);
+			(input as HTMLInputElement).classList.remove(validInputClass);
+			(input as HTMLInputElement).style.cssText = style.invalid;
 		}
 	}
 }

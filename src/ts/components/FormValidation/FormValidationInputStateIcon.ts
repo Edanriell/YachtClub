@@ -2,6 +2,8 @@ import gsap from "gsap";
 import { InputStateIcon } from "./FormValidation";
 
 interface IFormValidationInputStateIcon {
+	successIconClass: string;
+	failureIconClass: string;
 	displayInputStateIcon(
 		targetInput: EventTarget | null,
 		isValid: boolean,
@@ -10,6 +12,21 @@ interface IFormValidationInputStateIcon {
 }
 
 export class FormValidationInputStateIcon implements IFormValidationInputStateIcon {
+	successIconClass: string;
+
+	failureIconClass: string;
+
+	constructor({
+		inputStateIconClassSuccess,
+		inputStateIconClassFailure
+	}: {
+		inputStateIconClassSuccess: string | undefined;
+		inputStateIconClassFailure: string | undefined;
+	}) {
+		this.successIconClass = inputStateIconClassSuccess || "form-validation__input-state-icon--type--success",
+		this.failureIconClass = inputStateIconClassFailure || "form-validation__input-state-icon--type--failure"
+	}
+
 	public displayInputStateIcon(
 		targetInput: EventTarget | null,
 		isValid: boolean,
@@ -25,10 +42,10 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 		inputStateIcon: InputStateIcon
 	): void {
 		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--success"
+			`.${this.successIconClass}`
 		);
 		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--failure"
+			`.${this.failureIconClass}`
 		);
 
 		if (isInputValid && !successIcon) {
@@ -38,7 +55,7 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 				iconWidth: inputStateIcon.iconWidth,
 				iconHeight: inputStateIcon.iconHeight,
 				input: targetInput,
-				classes: "input-state-icon--type--success"
+				classes: `${this.successIconClass}`
 			});
 		} else if (!isInputValid && !failureIcon) {
 			this.#createInputStateIcon({
@@ -47,49 +64,23 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 				iconWidth: inputStateIcon.iconWidth,
 				iconHeight: inputStateIcon.iconHeight,
 				input: targetInput,
-				classes: "input-state-icon--type--failure"
+				classes: `${this.failureIconClass}`
 			});
 		}
 	}
 
 	#removeInputStateIcon(targetInput: EventTarget | null, isInputValid: boolean) {
 		const successIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--success"
+			`.${this.successIconClass}`
 		);
 		const failureIcon = (targetInput as HTMLElement).parentElement?.querySelector(
-			".input-state-icon--type--failure"
+			`.${this.failureIconClass}`
 		);
 
 		if (isInputValid && failureIcon) {
 			failureIcon.remove();
-			// gsap.fromTo(
-			// 	failureIcon,
-			// 	{ opacity: 1, scale: 1 },
-			// 	{
-			// 		opacity: 0,
-			// 		scale: 0,
-			// 		duration: 0.3,
-			// 		ease: "power2.out",
-			// 		onComplete: () => {
-			// 			failureIcon.remove();
-			// 		}
-			// 	}
-			// );
 		} else if (!isInputValid && successIcon) {
 			successIcon.remove();
-			// gsap.fromTo(
-			// 	successIcon,
-			// 	{ opacity: 1, scale: 1 },
-			// 	{
-			// 		opacity: 0,
-			// 		scale: 0,
-			// 		duration: 0.3,
-			// 		ease: "power2.out",
-			// 		onComplete: () => {
-			// 			successIcon.remove();
-			// 		}
-			// 	}
-			// );
 		}
 	}
 
@@ -139,7 +130,7 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 	}
 
 	public removeAllSuccessIcons() {
-		const successIcons = document.querySelectorAll(".input-state-icon--type--success");
+		const successIcons = document.querySelectorAll(`.${this.successIconClass}`);
 		gsap.fromTo(
 			successIcons,
 			{ opacity: 1, scale: 1 },
@@ -152,7 +143,7 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 				onComplete: () => {
 					successIcons.forEach(icon => icon.remove());
 				}
-			},
+			}
 		);
 	}
 }

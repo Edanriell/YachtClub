@@ -151,7 +151,7 @@
 	line-height: 2.2rem;
 	color: var(--clr-neutral-paleGrey);
 	cursor: pointer;
-	transition: background-color 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+	transition: background-color 0.3s cubic-bezier(0.51, 0.92, 0.24, 1), filter 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
 
 	&:hover {
 		background-color: var(--clr-hover-darkTurquoiseHover);

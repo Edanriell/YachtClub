@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { ErrorMessage } from "./FormValidation";
 
 interface IFormValidationErrorMessage {
+	messageClass: string | undefined;
 	displayErrorMessage(
 		targetInput: EventTarget | null,
 		errorMessage: ErrorMessage,
@@ -10,6 +11,12 @@ interface IFormValidationErrorMessage {
 }
 
 export class FormValidationErrorMessage implements IFormValidationErrorMessage {
+	messageClass: string | undefined;
+
+	constructor ({ errorMessageClass }: { errorMessageClass: string | undefined }) {
+		this.messageClass = errorMessageClass || "form-validation__error-message";
+	}
+
 	public displayErrorMessage(
 		targetInput: EventTarget | null,
 		errorMessage: ErrorMessage,
@@ -21,7 +28,7 @@ export class FormValidationErrorMessage implements IFormValidationErrorMessage {
 
 	#removeErrorMessage(input: EventTarget | null): void {
 		const errorMessage = (input as HTMLInputElement).parentNode?.querySelector(
-			".ModalForm-ErrorMessage"
+			`.${this.messageClass}`
 		);
 		if (errorMessage) {
 			gsap.fromTo(
@@ -44,12 +51,14 @@ export class FormValidationErrorMessage implements IFormValidationErrorMessage {
 		input: EventTarget | null,
 		{ messageText, messageStyle }: { messageText: string; messageStyle: string }
 	): void {
-		if ((input as HTMLInputElement).parentNode?.querySelector(".ModalForm-ErrorMessage"))
+		if (
+			(input as HTMLInputElement).parentNode?.querySelector(`.${this.messageClass}`)
+		)
 			return;
 		const errorMessage = document.createElement("span");
 		errorMessage.innerText = messageText;
 		errorMessage.style.cssText = messageStyle;
-		errorMessage.classList.add("ModalForm-ErrorMessage");
+		errorMessage.classList.add(`${this.messageClass}`);
 		(input as HTMLInputElement).parentNode?.append(errorMessage);
 		gsap.fromTo(
 			errorMessage,

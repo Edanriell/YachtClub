@@ -2,7 +2,6 @@ import { FormValidationErrorMessage } from "./FormValidationErrorMessage";
 import { FormValidationInputStateIcon } from "./FormValidationInputStateIcon";
 import { FormValidationSubmitButton } from "./FormValidationSubmitButton";
 import { FormValidationInput } from "./FormValidationInput";
-// add support of multiple errors (errors variation)
 
 interface IFormValidation {
 	formState: Object;
@@ -14,6 +13,11 @@ interface IFormValidation {
 	inputStateIcon: FormValidationInputStateIcon;
 	submitButton: FormValidationSubmitButton;
 	input: FormValidationInput;
+	validClass: string;
+	invalidClass: string;
+	invalidInputMessageClass: string | undefined;
+	inputIconClassFailure: string | undefined;
+	inputIconClassSuccess: string | undefined;
 	init(): void;
 }
 
@@ -63,25 +67,55 @@ export class FormValidation implements IFormValidation {
 
 	input: FormValidationInput;
 
+	validClass: string;
+
+	invalidClass: string;
+
+	invalidInputMessageClass: string | undefined;
+
+	inputIconClassFailure: string | undefined;
+
+	inputIconClassSuccess: string | undefined;
+
 	constructor({
 		inputs,
 		submitButton,
 		form,
-		initialInputStyle
+		initialInputStyle,
+		validInputClass,
+		invalidInputClass,
+		errorMessageClass,
+		inputStateIconClassFailure,
+		inputStateIconClassSuccess
 	}: {
 		inputs: Input;
 		submitButton: string;
 		form: string;
 		initialInputStyle: string;
+		validInputClass?: string;
+		invalidInputClass?: string;
+		errorMessageClass?: string;
+		inputStateIconClassFailure?: string;
+		inputStateIconClassSuccess?: string;
 	}) {
 		this.form = form;
 		this.inputsArray = inputs;
 		this.initialInputStyle = initialInputStyle;
+		this.invalidInputMessageClass = errorMessageClass;
+		this.inputIconClassFailure = inputStateIconClassFailure;
+		this.inputIconClassSuccess = inputStateIconClassSuccess;
 		this.button = document.querySelector(submitButton);
-		this.errorMessage = new FormValidationErrorMessage();
-		this.inputStateIcon = new FormValidationInputStateIcon();
+		this.errorMessage = new FormValidationErrorMessage({
+			errorMessageClass: this.invalidInputMessageClass
+		});
+		this.inputStateIcon = new FormValidationInputStateIcon({
+			inputStateIconClassSuccess: this.inputIconClassSuccess,
+			inputStateIconClassFailure: this.inputIconClassFailure
+		});
 		this.submitButton = new FormValidationSubmitButton();
 		this.input = new FormValidationInput();
+		this.validClass = validInputClass || "input-valid";
+		this.invalidClass = invalidInputClass || "input-invalid";
 	}
 
 	init(): void {
@@ -102,7 +136,10 @@ export class FormValidation implements IFormValidation {
 			});
 		}
 		this.button?.addEventListener("click", () => {
-			this.#resetState();
+			this.#resetState({
+				validInputClass: this.validClass,
+				invalidInputClass: this.invalidClass
+			});
 			this.inputStateIcon.removeAllSuccessIcons();
 		});
 	}
@@ -125,7 +162,13 @@ export class FormValidation implements IFormValidation {
 		inputStateIcon: InputStateIcon;
 	}): void {
 		const validationResult = regExp.test(inputValue);
-		this.input.changeInputStyles(inputStyle, targetInput, validationResult);
+		this.input.changeInputStyles({
+			style: inputStyle,
+			input: targetInput,
+			isValid: validationResult,
+			validInputClass: this.validClass,
+			invalidInputClass: this.invalidClass
+		});
 		this.errorMessage.displayErrorMessage(targetInput, errorMessage, validationResult);
 		this.inputStateIcon.displayInputStateIcon(targetInput, validationResult, inputStateIcon);
 		this.formState = {
@@ -147,13 +190,19 @@ export class FormValidation implements IFormValidation {
 		this.formState = state;
 	}
 
-	#resetState(): void {
+	#resetState({
+		validInputClass,
+		invalidInputClass
+	}: {
+		validInputClass: string;
+		invalidInputClass: string;
+	}): void {
 		this.#createInitialState(this.inputsArray);
 		const form = document.querySelector(`${this.form}`);
 		const inputs = form?.querySelectorAll("input");
 		inputs?.forEach(input => {
-			input.classList.remove("Input-Invalid");
-			input.classList.remove("Input-Valid");
+			input.classList.remove(invalidInputClass);
+			input.classList.remove(validInputClass);
 			input.style.cssText = this.initialInputStyle;
 		});
 	}
