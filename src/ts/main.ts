@@ -1,8 +1,9 @@
 import "../scss/style.scss";
 import "swiper/css";
 
-import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
+import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative, Mousewheel } from "swiper";
 import { HeroSlider } from "./components/HeroSlider";
+import { OtherNewsSlider } from "./components/OtherNewsSlider";
 import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
 import { VideoPlayer } from "./components/VideoPlayer";
 import { CustomCheckbox } from "./components/CustomCheckbox";
@@ -13,7 +14,7 @@ import {
 	formValidationInitialInputStyles
 } from "./components/FormValidation/FormValidationOptions";
 
-Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative]);
+Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative, Mousewheel]);
 
 window.addEventListener("DOMContentLoaded", () => {
 	const mainNavigationLinkDirectionAwareHoverEffect = new LinkDirectionAwareHoverEffect({
@@ -48,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
 	const heroSlider = new Swiper(".hero-slider", HeroSlider);
+	const otherNewsSlider = new Swiper(".other-news-slider", OtherNewsSlider);
 	const videoPlayer = new VideoPlayer({
 		triggerSelector: ".video__play-button",
 		posterSelector: ".video__preview-image",
@@ -55,5 +57,6 @@ window.addEventListener("load", () => {
 	});
 
 	heroSlider.init();
+	otherNewsSlider.init();
 	videoPlayer.init();
 });
