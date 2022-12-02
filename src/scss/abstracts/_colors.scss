@@ -1,25 +1,25 @@
 $colors: (
 	primary: (
-		"nileBlue": hsl(213deg 58% 20%), // #163152
-		"darkBlueGrey": hsl(213deg 35% 24%), // #283C54
-		"darkBlueGreyHalfTransparent": hsla(213, 35%, 24%, 0.502), // #283C5480
-		"darkBlueGreyHalfTransparent2": hsla(213, 35%, 24%, 0.4), // #283C5480
-		"nileBlueHalfTransparent": hsla(213, 58%, 20%, 0.15), // #163152 15%
-		"nileBlueHalfTransparent2": hsla(213, 58%, 20%, 0.4), // #163152 40%
-		"nileBlueHalfTransparent3": hsla(213, 58%, 20%, 0.1) // #163152 10%
+		"nileBlue": hsl(213deg 58% 20%),
+		"darkBlueGrey": hsl(213deg 35% 24%),
+		"darkBlueGreyHalfTransparent": hsla(213, 35%, 24%, 0.502),
+		"darkBlueGreyHalfTransparent2": hsla(213, 35%, 24%, 0.4),
+		"nileBlueHalfTransparent": hsla(213, 58%, 20%, 0.15),
+		"nileBlueHalfTransparent2": hsla(213, 58%, 20%, 0.4),
+		"nileBlueHalfTransparent3": hsla(213, 58%, 20%, 0.1)
 		),
 	secondary: (
-		"whiteSmoke": hsl(240deg 11% 96%), // #F5F5F7
+		"whiteSmoke": hsl(240deg 11% 96%),
 		),
 	accent: (
-		"darkTurquoise": hsl(177deg 100% 39%), // #00C6BD
-		"lightCyan": hsl(173, 85%, 92%), // #D9FCF8
-		"viridianGreen": hsl(177, 100%, 30%) // #009A93
+		"darkTurquoise": hsl(177deg 100% 39%),
+		"lightCyan": hsl(173, 85%, 92%),
+		"viridianGreen": hsl(177, 100%, 30%)
 	),
 	neutral: (
-		"paleGrey": hsl(240deg 100% 100%), // #FDFDFF
-		"platinum": hsl(0, 0%, 90%), // #E5E5E5
-		"cultured": hsl(240, 33%, 97%) // #F5F5FA
+		"paleGrey": hsl(240deg 100% 100%),
+		"platinum": hsl(0, 0%, 90%),
+		"cultured": hsl(240, 33%, 97%)
 	),
 	background: (
 		"nileBlueTransparent": hsla(213, 58%, 20%, 0.3)

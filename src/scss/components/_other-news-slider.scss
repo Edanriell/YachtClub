@@ -1,7 +1,6 @@
 @use "../abstracts/mixins" as *;
 
 .other-news-slider {
-    // padding-top: 4rem;
 	margin-left: -1.5rem !important;
 	margin-right: -1.5rem !important;
 	padding-left: 1.5rem !important;
@@ -11,7 +10,6 @@
 }
 
 .other-news-slider__wrapper {
-    // @include flex(flex-start, flex-start, row);
 	margin-top: 4rem !important;
 	padding-top: -4rem !important;
 }
