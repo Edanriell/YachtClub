@@ -38,8 +38,40 @@ export class Spinner implements ISpinner {
 		return Spinner.#instance;
 	}
 
-	showSpinner(position: SpinnerPosition): void {
+	public showSpinner(position: SpinnerPosition): void {
 		this.#createSpinner(position);
+	}
+
+	public hideSpinner(): void {
+		this.#spinnerAnimations({
+			hideSpinner: true
+		});
+	}
+
+	public toggleButtonTextVisibility({
+		buttonText,
+		hide = false,
+		show = false,
+		animationDelay = 0
+	}: {
+		buttonText: HTMLElement | null;
+		hide?: boolean;
+		show?: boolean;
+		animationDelay?: number;
+	}): void {
+		if (buttonText && hide) {
+			Spinner.#tlButton.fromTo(
+				buttonText,
+				{ opacity: 1 },
+				{ opacity: 0, scale: 0.8, duration: 0.6, ease: "power2.out" }
+			);
+		} else if (buttonText && show) {
+			Spinner.#tlButton.fromTo(
+				buttonText,
+				{ opacity: 0, scale: 0.8 },
+				{ opacity: 1, scale: 1, duration: 0.3, ease: "power2.out", delay: animationDelay }
+			);
+		}
 	}
 
 	#createSpinner(position: SpinnerPosition): void {
@@ -82,40 +114,8 @@ export class Spinner implements ISpinner {
 		}
 	}
 
-	hideSpinner(): void {
-		this.#spinnerAnimations({
-			hideSpinner: true
-		});
-	}
-
 	#removeSpinner(): void {
 		const spinner = document.querySelector(`.${Spinner.spinnerSelector}`);
 		spinner?.remove();
-	}
-
-	toggleButtonTextVisibility({
-		buttonText,
-		hide = false,
-		show = false,
-		animationDelay = 0
-	}: {
-		buttonText: HTMLElement | null;
-		hide?: boolean;
-		show?: boolean;
-		animationDelay?: number;
-	}): void {
-		if (buttonText && hide) {
-			Spinner.#tlButton.fromTo(
-				buttonText,
-				{ opacity: 1 },
-				{ opacity: 0, scale: 0.8, duration: 0.6, ease: "power2.out" }
-			);
-		} else if (buttonText && show) {
-			Spinner.#tlButton.fromTo(
-				buttonText,
-				{ opacity: 0, scale: 0.8 },
-				{ opacity: 1, scale: 1, duration: 0.3, ease: "power2.out", delay: animationDelay }
-			);
-		}
 	}
 }

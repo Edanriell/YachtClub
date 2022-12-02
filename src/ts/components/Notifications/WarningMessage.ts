@@ -46,7 +46,7 @@ export class WarningMessage extends Notifications implements IWarningMessage {
 		this.icon = WarningIcon;
 	}
 
-	init(): void {
+	public init(): void {
 		this.#createMessage();
 	}
 

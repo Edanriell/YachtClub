@@ -1,9 +1,6 @@
 import "../scss/style.scss";
 import "swiper/css";
 
-import SuccessIcon from "../images/icons/circle-check-solid.svg";
-import FailureIcon from "../images/icons/circle-exclamation-solid.svg";
-
 import Swiper, { Navigation, Autoplay, Keyboard, EffectCreative } from "swiper";
 import { HeroSlider } from "./components/HeroSlider";
 import { LinkDirectionAwareHoverEffect } from "./components/LinkDirectionAwareHoverEffect";
@@ -11,6 +8,10 @@ import { VideoPlayer } from "./components/VideoPlayer";
 import { CustomCheckbox } from "./components/CustomCheckbox";
 import { Forms } from "./components/Forms";
 import { FormValidation } from "./components/FormValidation";
+import {
+	formValidationInputsOptions,
+	formValidationInitialInputStyles
+} from "./components/FormValidation/FormValidationOptions";
 
 Swiper.use([Navigation, Autoplay, Keyboard, EffectCreative]);
 
@@ -34,110 +35,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	const eventParticipantRegistrationFormValidation = new FormValidation({
 		form: "[data-event-participant-registration-form]",
-		inputs: [
-			{
-				uniqueName: "name",
-				selector: "[data-event-participant-registration-form-name-input]",
-				testRegExp:
-					// eslint-disable-next-line max-len
-					/^[a-zа-яё\s]+$/iu,
-				style: {
-					valid: `
-						border: 0.1rem solid #198754;
-					`,
-					invalid: `
-						border: 0.1rem solid #dc3545;
-					`
-				},
-				errorMessage: {
-					messageText: "Неверное имя",
-					messageStyle: `
-						color: #dc3545;
-						position: absolute;
-						font-size: 1.1rem;
-						bottom: 0;
-						right: 0;
-						z-index: 4;
-						font-family: var(--ff-normal-400);
-					`
-				},
-				inputStateIcon: {
-					validInputIcon: SuccessIcon,
-					invalidInputIcon: FailureIcon,
-					iconWidth: 30,
-					iconHeight: 30
-				}
-			},
-			{
-				uniqueName: "phoneNumber",
-				selector: "[data-event-participant-registration-form-phone-input]",
-				testRegExp:
-					// eslint-disable-next-line max-len
-					/^(\+)\d+$/,
-				style: {
-					valid: `
-						border: 0.1rem solid #198754;
-					`,
-					invalid: `
-						border: 0.1rem solid #dc3545;
-					`
-				},
-				errorMessage: {
-					messageText: "Неверный номер телефона",
-					messageStyle: `
-						color: #dc3545;
-						position: absolute;
-						font-size: 1.1rem;
-						bottom: 0;
-						right: 0;
-						z-index: 4;
-						font-family: var(--ff-normal-400);
-					`
-				},
-				inputStateIcon: {
-					validInputIcon: SuccessIcon,
-					invalidInputIcon: FailureIcon,
-					iconWidth: 30,
-					iconHeight: 30
-				}
-			},
-			{
-				uniqueName: "email",
-				selector: "[data-event-participant-registration-form-email-input]",
-				testRegExp:
-					// eslint-disable-next-line max-len
-					/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-				style: {
-					valid: `
-						border: 0.1rem solid #198754;
-					`,
-					invalid: `
-						border: 0.1rem solid #dc3545;
-					`
-				},
-				errorMessage: {
-					messageText: "Неверный адрес электронной почты",
-					messageStyle: `
-						color: #dc3545;
-						position: absolute;
-						font-size: 1.1rem;
-						bottom: 1rem;
-						right: 0;
-						z-index: 4;
-						font-family: var(--ff-normal-400);
-					`
-				},
-				inputStateIcon: {
-					validInputIcon: SuccessIcon,
-					invalidInputIcon: FailureIcon,
-					iconWidth: 30,
-					iconHeight: 30
-				}
-			}
-		],
-		initialInputStyle: `
-			border: 0.1rem solid var(--clr-primary-nileBlueHalfTransparent);
-		`,
+		inputs: formValidationInputsOptions,
+		initialInputStyle: formValidationInitialInputStyles,
 		submitButton: "[data-event-participant-registration-form-submit-button]"
 	});
 

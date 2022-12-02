@@ -57,7 +57,7 @@ export class Forms implements IForms {
 		this.database = databaseName;
 	}
 
-	init(): void {
+	public init(): void {
 		this.form?.addEventListener("submit", event => {
 			this.#sendData(event, this.form, this.host, this.port, this.database);
 		});

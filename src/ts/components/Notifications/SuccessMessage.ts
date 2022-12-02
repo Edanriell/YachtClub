@@ -46,7 +46,7 @@ export class SuccessMessage extends Notifications implements ISuccessMessage {
 		this.icon = SuccessIcon;
 	}
 
-	init(): void {
+	public init(): void {
 		this.#createMessage();
 	}
 

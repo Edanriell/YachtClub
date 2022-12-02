@@ -16,6 +16,7 @@ interface IFormValidation {
 	validClass: string;
 	invalidClass: string;
 	invalidInputMessageClass: string | undefined;
+	inputIconClass: string | undefined;
 	inputIconClassFailure: string | undefined;
 	inputIconClassSuccess: string | undefined;
 	init(): void;
@@ -38,8 +39,7 @@ export type ErrorMessage = {
 export type InputStateIcon = {
 	validInputIcon: string;
 	invalidInputIcon: string;
-	iconWidth: number;
-	iconHeight: number;
+	iconStyles: string;
 };
 
 export type InputStyle = {
@@ -73,6 +73,8 @@ export class FormValidation implements IFormValidation {
 
 	invalidInputMessageClass: string | undefined;
 
+	inputIconClass: string | undefined;
+
 	inputIconClassFailure: string | undefined;
 
 	inputIconClassSuccess: string | undefined;
@@ -85,6 +87,7 @@ export class FormValidation implements IFormValidation {
 		validInputClass,
 		invalidInputClass,
 		errorMessageClass,
+		inputStateIconClass,
 		inputStateIconClassFailure,
 		inputStateIconClassSuccess
 	}: {
@@ -95,6 +98,7 @@ export class FormValidation implements IFormValidation {
 		validInputClass?: string;
 		invalidInputClass?: string;
 		errorMessageClass?: string;
+		inputStateIconClass?: string;
 		inputStateIconClassFailure?: string;
 		inputStateIconClassSuccess?: string;
 	}) {
@@ -102,6 +106,7 @@ export class FormValidation implements IFormValidation {
 		this.inputsArray = inputs;
 		this.initialInputStyle = initialInputStyle;
 		this.invalidInputMessageClass = errorMessageClass;
+		this.inputIconClass = inputStateIconClass;
 		this.inputIconClassFailure = inputStateIconClassFailure;
 		this.inputIconClassSuccess = inputStateIconClassSuccess;
 		this.button = document.querySelector(submitButton);
@@ -109,6 +114,7 @@ export class FormValidation implements IFormValidation {
 			errorMessageClass: this.invalidInputMessageClass
 		});
 		this.inputStateIcon = new FormValidationInputStateIcon({
+			inputStateIconClass: this.inputIconClass,
 			inputStateIconClassSuccess: this.inputIconClassSuccess,
 			inputStateIconClassFailure: this.inputIconClassFailure
 		});
@@ -118,7 +124,7 @@ export class FormValidation implements IFormValidation {
 		this.invalidClass = invalidInputClass || "input-invalid";
 	}
 
-	init(): void {
+	public init(): void {
 		this.#createInitialState(this.inputsArray);
 		for (const input of this.inputsArray) {
 			document.querySelector(input.selector)?.addEventListener("input", event => {

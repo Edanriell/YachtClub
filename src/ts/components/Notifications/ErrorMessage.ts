@@ -46,7 +46,7 @@ export class ErrorMessage extends Notifications implements IErrorMessage {
 		this.icon = ErrorIcon;
 	}
 
-	init(): void {
+	public init(): void {
 		this.#createMessage();
 	}
 

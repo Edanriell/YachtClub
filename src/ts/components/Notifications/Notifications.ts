@@ -50,7 +50,7 @@ export class Notifications implements INotifications {
 		this.selector = notificationSelector;
 	}
 
-	showNotification(): void {
+	public showNotification(): void {
 		this.timeline.fromTo(
 			this.selector,
 			{ opacity: 0, y: 40 },
@@ -58,7 +58,7 @@ export class Notifications implements INotifications {
 		);
 	}
 
-	hideNotification(): void {
+	public hideNotification(): void {
 		this.timeline.fromTo(
 			this.selector,
 			{ opacity: 1, y: 0 },
@@ -75,12 +75,7 @@ export class Notifications implements INotifications {
 		);
 	}
 
-	#removeNotification(): void {
-		const notification = document.querySelector(this.selector);
-		notification?.remove();
-	}
-
-	removeOnClick({
+	public removeOnClick({
 		notification,
 		triggerButton
 	}: {
@@ -93,7 +88,7 @@ export class Notifications implements INotifications {
 		});
 	}
 
-	removeAfterTimeout({ timeout = false }: { timeout: boolean | number }): void {
+	public removeAfterTimeout({ timeout = false }: { timeout: boolean | number }): void {
 		if (timeout) {
 			setTimeout(() => {
 				this.hideNotification();
@@ -101,7 +96,7 @@ export class Notifications implements INotifications {
 		}
 	}
 
-	setStyles({ notificationSelector }: { notificationSelector: string }): void {
+	public setStyles({ notificationSelector }: { notificationSelector: string }): void {
 		const notification: HTMLElement | null = document.querySelector(notificationSelector);
 		if (notification) {
 			notification.style.cssText = `
@@ -111,13 +106,18 @@ export class Notifications implements INotifications {
 		}
 	}
 
-	initLoadingBar({ loadingBarSelector }: { loadingBarSelector: string }): void {
+	public initLoadingBar({ loadingBarSelector }: { loadingBarSelector: string }): void {
 		const loadingBar: HTMLElement | null = document.querySelector(loadingBarSelector);
 		if (!loadingBar) return;
 		const time = this.timeoutDelay;
 		const { width } = getComputedStyle(loadingBar);
 		const barWidthPart = (parseFloat(width) / (time / 1000)) * 0.3;
 		this.#updateLoadingBar(loadingBar, width, barWidthPart);
+	}
+
+	#removeNotification(): void {
+		const notification = document.querySelector(this.selector);
+		notification?.remove();
 	}
 
 	#updateLoadingBar(loadingBar: HTMLElement, barWidth: string, barWidthPart: number) {

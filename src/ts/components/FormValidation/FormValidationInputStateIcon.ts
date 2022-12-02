@@ -12,17 +12,22 @@ interface IFormValidationInputStateIcon {
 }
 
 export class FormValidationInputStateIcon implements IFormValidationInputStateIcon {
+	iconClass: string;
+
 	successIconClass: string;
 
 	failureIconClass: string;
 
 	constructor({
 		inputStateIconClassSuccess,
-		inputStateIconClassFailure
+		inputStateIconClassFailure,
+		inputStateIconClass,
 	}: {
 		inputStateIconClassSuccess: string | undefined;
 		inputStateIconClassFailure: string | undefined;
+		inputStateIconClass: string | undefined;
 	}) {
+		this.iconClass = inputStateIconClass || "form-validation__input-state-icon",
 		this.successIconClass = inputStateIconClassSuccess || "form-validation__input-state-icon--type--success",
 		this.failureIconClass = inputStateIconClassFailure || "form-validation__input-state-icon--type--failure"
 	}
@@ -34,6 +39,24 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 	): void {
 		this.#removeInputStateIcon(targetInput, isValid);
 		this.#showInputStateIcon(targetInput, isValid, inputStateIcon);
+	}
+
+	public removeAllSuccessIcons() {
+		const successIcons = document.querySelectorAll(`.${this.successIconClass}`);
+		gsap.fromTo(
+			successIcons,
+			{ opacity: 1, scale: 1 },
+			{
+				opacity: 0,
+				scale: 0,
+				duration: 0.3,
+				ease: "power2.out",
+				stagger: 0.15,
+				onComplete: () => {
+					successIcons.forEach(icon => icon.remove());
+				}
+			}
+		);
 	}
 
 	#showInputStateIcon(
@@ -51,18 +74,16 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 		if (isInputValid && !successIcon) {
 			this.#createInputStateIcon({
 				iconType: inputStateIcon.validInputIcon,
-				iconDescription: "Успех",
-				iconWidth: inputStateIcon.iconWidth,
-				iconHeight: inputStateIcon.iconHeight,
+				iconDescription: "Ошибок в поле не обнаружено",
+				iconStyles: inputStateIcon.iconStyles,
 				input: targetInput,
 				classes: `${this.successIconClass}`
 			});
 		} else if (!isInputValid && !failureIcon) {
 			this.#createInputStateIcon({
 				iconType: inputStateIcon.invalidInputIcon,
-				iconDescription: "Ошибка",
-				iconWidth: inputStateIcon.iconWidth,
-				iconHeight: inputStateIcon.iconHeight,
+				iconDescription: "Обноружена ошибка в поле",
+				iconStyles: inputStateIcon.iconStyles,
 				input: targetInput,
 				classes: `${this.failureIconClass}`
 			});
@@ -87,30 +108,19 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 	#createInputStateIcon({
 		iconType,
 		iconDescription,
-		iconWidth,
-		iconHeight,
+		iconStyles,
 		input,
 		classes
 	}: {
 		iconType: string;
 		iconDescription: string;
-		iconWidth: number;
-		iconHeight: number;
+		iconStyles: string;
 		input: EventTarget | null;
 		classes: string;
 	}): void {
-		console.log("creating");
 		const icon = document.createElement("div");
-		icon.classList.add("input-state-icon", `${classes}`);
-		icon.style.cssText = `
-			width: ${iconWidth}px;
-			height: ${iconHeight}px;
-			position: absolute;
-			top: 50%;
-			right: -10%;
-			transform: translateY(-30%);
-			object-fit: cover;
-			`;
+		icon.classList.add(`${this.iconClass}`, `${classes}`);
+		icon.style.cssText = iconStyles;
 		icon.innerHTML = `
 			<img src=${iconType} alt="">
 				<span class="visually-hidden">${iconDescription}</span>
@@ -125,24 +135,6 @@ export class FormValidationInputStateIcon implements IFormValidationInputStateIc
 				scale: 1,
 				duration: 0.3,
 				ease: "power2.out"
-			}
-		);
-	}
-
-	public removeAllSuccessIcons() {
-		const successIcons = document.querySelectorAll(`.${this.successIconClass}`);
-		gsap.fromTo(
-			successIcons,
-			{ opacity: 1, scale: 1 },
-			{
-				opacity: 0,
-				scale: 0,
-				duration: 0.3,
-				ease: "power2.out",
-				stagger: 0.15,
-				onComplete: () => {
-					successIcons.forEach(icon => icon.remove());
-				}
 			}
 		);
 	}
