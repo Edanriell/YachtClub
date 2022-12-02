@@ -22,4 +22,10 @@
     border: 0.1rem solid var(--clr-accent-darkTurquoise);
     padding: 1rem 1.2rem;
     display: block;
+	transition: color .3s cubic-bezier(0.51, 0.92, 0.24, 1), background-color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+	&:hover {
+		background-color: var(--clr-accent-darkTurquoise);
+		color: white;
+	}
 }

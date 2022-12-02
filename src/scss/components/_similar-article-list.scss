@@ -36,6 +36,8 @@
     width: 3.2rem;
     height: 3.2rem;
     fill: none;
+	transition: opacity .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+	opacity: 0.7;
 }
 
 .similar-article-list__item {
@@ -50,6 +52,14 @@
     &:nth-child(2) {
         border-top: none;
     }
+
+	&:hover .similar-article-list__link {
+		opacity: 1;
+	}
+
+	&:hover .similar-article-list__similar-articles-link-icon {
+		opacity: 1;
+	}
 }
 
 .similar-article-list__link {
@@ -58,4 +68,6 @@
     line-height: 1.6rem;
     color: var(--clr-primary-darkBlueGrey);
     max-width: 14.8rem;
+	transition: opacity .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+	opacity: 0.7;
 }

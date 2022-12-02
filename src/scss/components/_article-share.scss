@@ -33,22 +33,43 @@
 }
 
 .article-share__facebook-icon {
-    fill: none;
+    fill: white;
     width: 3.4rem;
     height: 3.4rem;
     vertical-align: middle;
+	color: #163152;
+	transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
 
 .article-share__twitter-icon {
-    fill: none;
+    fill: white;
     width: 3.4rem;
     height: 3.4rem;
     vertical-align: middle;
+	color: #163152;
+	transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
 
 .article-share__instagram-icon {
-    fill: none;
+    fill: white;
     width: 3.4rem;
     height: 3.4rem;
     vertical-align: middle;
+	color: #163152;
+	transition: fill .3s cubic-bezier(0.51, 0.92, 0.24, 1), color .3s cubic-bezier(0.51, 0.92, 0.24, 1);
+
+    &:hover {
+        fill: var(--clr-accent-darkTurquoise);
+        color: white;
+    }
 }
