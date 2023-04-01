@@ -1,6 +1,7 @@
-# YachtClub desktop version
-![YachtClub desktop](https://github.com/Edanriell/CleverBaby/blob/master/desktop-1366.png?raw=true)
-# YachtClub tablet version
-![YachtClub tablet](https://github.com/Edanriell/CleverBaby/blob/master/tablet-768.png?raw=true)
-# YachtClub mobile version
-![YachtClub mobile](https://github.com/Edanriell/CleverBaby/blob/master/phone-320.png?raw=true)
+# YachtClub index page
+
+![YachtClub desktop](https://github.com/Edanriell/YachtClub/blob/master/YachtClub-Index.png?raw=true)
+
+# YachtClub news page
+
+![YachtClub tablet](https://github.com/Edanriell/YachtClub/blob/master/YachtClub-News.png?raw=true)
